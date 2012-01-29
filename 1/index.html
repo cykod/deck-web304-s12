@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web 1 - Class 1</title>
+	<meta name="viewport" content="width=1024">
+	
+	<!-- Replace path with correct path to deck.core.css. -->
+	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
+	
+	<!-- Any other extension CSS files go here. -->
+	<!-- link rel="stylesheet"  id='transition-theme-link' href="horizontal-slide.css" type="text/css" --> 
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="css/deck.navigation.css">
+	<link rel="stylesheet" href="css/deck.status.css">
+	<link rel="stylesheet" href="css/deck.hash.css">
+	<link rel="stylesheet" href="css/deck.coder.css">
+	
+	<!-- Replace path with correct path to Modernizr file. -->
+	<script src="js/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Web 1</h1>
+<h2>CDGD304 - Spring 2012</h2>
+<p>Mondays 2:00pm - 6:00pm<br/>
+ <a href='http://bit.ly/web304-1'>http://bit.ly/web304-1</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+<ol>
+	<ol>
+		<li class="slide">
+			<h3>Welcome - Who, What, How</h3>
+		</li>
+		<li class="slide">
+			<h3>Administrivia</h3>
+		</li>
+		<li class="slide">
+			<h3>What is the Web</h3>
+		</li>
+		<li class="slide">
+			<h3>Open and closed source</h3>
+		</li>
+		<li class="slide">
+			<h3>HTML/CSS/JS</h3>
+		</li>
+		<li class="slide">
+			<h3>GitHubbery</h3>
+		</li>
+		<li class="slide">
+			<h3>State of the Web/Cutting Edge</h3>
+		</li>
+	</ol>
+</ol>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Who am I?</h1>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Me = Martha Rettig</h1>
+<p>Run Boston-based Web Consultancy <a href='http://cykod.com'>Cykod</a></p>
+</article>
+
+<article class='slide slide-list'>
+<h2>Martha Rettig /<span class="callout"> Designer</span></h2>
+<ul>
+	<li class="slide">
+		<h3>B.A. in Graphic Design</h3>
+	</li>
+	<li class="slide">
+		<h3>7 years of agency experience in print &amp; branding</h3>
+	</li>
+	<li class="slide">
+		<h3>4 years as creative director, web &amp; UX design at cykod</h3>
+	</li>
+	<li class="slide">
+		<h3>working towards my MFA here at MassArt in DMI</h3>
+	</li>
+	<li class="slide">
+		<h3>Run the <a href="http://www.meetup.com/Boston-Artists-Plus-Coders/">Artists + Coders Meetup</a></h3>
+	</li>
+	<li class="slide"><h3>Check out the <a href="http://www.meetup.com/Boston-Frontend-Developers/">Front-end Developers Meetup</a></h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>I <span class='large'>&hearts;</span> the web</h1>
+<h2>I want you to be as excited about the current state of the web as I am.</h2>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Course Goals</h1>
+</article>
+
+<article style='background-image:url(images/colored-bricks.jpg);' class='slide slide-background'>
+<h1>Goal 1</h1>
+</article>
+
+
+<article  style='background-image:url(images/colored-bricks.jpg);' class='slide slide-background-content'>
+<div class="background-padding"><div class="background-wrapper"><h1>Get you comfortable with the basics</h1>
+<h2 class='slide'>You've got to get your HTML, CSS, &amp; Javascript down pat. They aren't going anywhere.</h2>
+</div></div>
+</article>
+
+<article style='background-image:url(images/hydrant.jpg);' class='slide slide-background'>
+<h1>Goal 2</h1>
+</article>
+
+<article  style='background-image:url(images/hydrant.jpg);' class='slide slide-background-content'>
+<div class="background-padding"><div class="background-wrapper"><h1>Teach you to drink from a firehose</h1>
+<h2 class='slide'>Web design is too big and changes far to fast to know everything, you need to feel comfortable “winging it” and be able to learn on your own.</h2>
+</article>
+
+<article style='background-image:url(images/voodoo.jpg);' class='slide slide-background'>
+<h1>Goal 3</h1>
+</article>
+
+<article  style='background-image:url(images/voodoo.jpg);' class='slide slide-background-content'>
+<div class="background-padding"><div class="background-wrapper"><h1>No voodoo</h1>
+<h2 class='slide'>There is no magic. <br/>I repeat: there is no Magic.</h2>
+</article>
+
+<article style='background-image:url(images/html5-dude.jpg);' class='slide slide-background'>
+<h1>Most Important Goal</h1>
+</article>
+
+<article  style='background-image:url(images/html5-dude.jpg);' class='slide slide-background-content'>
+<div class="background-padding"><div class="background-wrapper"><h1>Get you building stuff</h1>
+<h2 class='slide'>To be able to turn ideas and designs into functioning web pages.</h2>
+</article>
+
+<article class='slide slide-list'>
+<h1>How we're going to accomplish this</h1>
+<ul>
+	<li class="slide">
+		<h3>Lots of Hands-on exercises.</h3>
+	</li>
+	<li class="slide">
+		<h3>Lots of Critical evaluation of websites.</h3>
+	</li>
+	<li class="slide">
+		<h3>Just enough lecture and theory to get by.</h3>
+	</li>
+	<li class="slide">
+		<h3>Not a one-size-fits-all approach.</h3>
+	</li>
+</ul>
+</article>
+
+
+<article class='slide slide-accent'>
+<h1>Administrivia</h1>
+</article>
+
+<article class='slide slide-subhead'>
+<h1><a href="images/monday-syllabus-spring2012.pdf">Syllabus</a></h1>
+<p>Weekly Reading, Assignments, &amp; Critiques, </p>
+</article>
+
+<article class='slide slide-subhead'>
+<h1><a href="images/GD-grading-spring2012.pdf">Grading</a></h1>
+<p>Graphic Design Department's <br/> Course Grading &amp; Academic Policy </p>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Mailing List</h1>
+<p>Sign Up Now - With the email address you use most<br/><a href='http://groups.google.com/group/web304-spring2012'>http://groups.google.com/group/web304-spring2012</a></p>
+</article>
+
+<article class='slide slide-title'>
+<h1>Class Content</h1>
+</article>
+
+<article class='slide slide-accent'>
+<h1>What is the web?</h1>
+</article>
+
+
+<article class='slide slide-image'>
+<h1><img src="images/wikipedia.jpg" class='top-image'/>Wikipedia Says:</h1>
+<hp class='slide'>
+The world wide web is a system of interlinked 
+hypertext documents accessed via the Internet. With a 
+web browser, one can view web pages that may contain 
+text, images, videos, and other multimedia and navigate 
+between them via hyperlinks.
+</p>
+</article>
+
+<article class='slide slide-accent'>
+<h1>The Web is Content</h1>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>What can you do on the web?</h1>
+<h2 class='slide'>Just about anything...</h2>
+</article>
+
+<article class='slide slide-list'>
+<h1>The web is...</h1>
+<ul>
+	<li class="slide">
+		<h3>"Brochure" websites: <a href='http://whitehouse.gov'>whitehouse.gov</a></h3>
+	</li>
+	<li class="slide">
+		<h3>E-commerce: <a href='http://amazon.com'>amazon.com</a></h3>
+	</li>
+	<li class="slide">
+		<h3>Social Networking: <a href='http://twitter.com'>twitter.com</a> <a href='http://facebook.com'>facebook.com</a></h3>
+	</li>
+	<li class="slide">
+		<h3>Online/IRL Communities: <a href='http://meetup.com'>meetup.com</a> <a href='http://yelp.com'>yelp.com</a></h3>
+	</li>
+	<li class="slide">
+		<h3>Interactive Information Applications: <a href='http://maps.google.com'>maps.google.com</a></h3>
+	</li>
+	<li class='slide'>
+		<h3>Interactive Games: <a href='http://www.farmville.com'>farmville.com</a></h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>The web is....</h1>
+<h2 class='slide'>Whatever you want to build.</h2>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>The Good:</h1>
+<h2>If you can dream it,<br/> you can build it</h2>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>The Bad:</h1>
+<h2>There's a <em>lot</em> to learn</h2>
+</article>
+
+<article class='slide slide-list'>
+<h2>A Good Web designer<br/> needs to understand:</h2>
+<ol>
+	<li class='slide'>
+		<h3>HTML</h3>
+	</li>
+	<li class='slide'>
+		<h3>CSS</h3>
+	</li>
+	<li class='slide'>
+		<h3>JavaScript</h3>
+	</li>
+</ol>
+</article>
+
+<article class='slide slide-list'>
+<h2>But also...</h2>
+<ol>
+	<li class="slide">
+		<h3>Design Layout fundamentals</h3>
+	</li>
+	<li class="slide">
+		<h3>Typography</h3>
+	</li>
+	<li class="slide">
+		<h3>User interaction</h3>
+	</li>
+	<li class="slide">
+		<h3>Marketing</h3>
+	</li>
+	<li class='slide'>
+		<h3>Content Strategy</h3>
+
+	</li>
+	<li class="slide">
+		<h3>Search engines</h3>
+	</li>
+</ol>
+</article>
+
+
+<article class='slide slide-accent'>
+<h1>Who runs the internet?</h1>
+</article>
+
+<article class="slide slide-subhead">
+<h1>Nobody</h1>
+<p>(The lunatics are running the asylum)</p>
+</article>
+
+<article class="slide slide-list">
+	<h2>By General Agreement, the players:</h2>
+<ol>
+	<li class='slide'>
+		<h3>Carriers have peering arrangements to deliver bandwidth (Comcast, Verizon)</h3>
+	</li>
+	<li class='slide'>
+		<h3>Standards groups promote “best” practices (W3C, WHATWG)</h3>
+	</li>
+	<li class='slide'>
+		<h3>Browser Makers implement whatever they want (Microsoft, Mozilla, Google, Opera)</h3>
+	</li>
+	<li class='slide'>
+		<h3>Servers serve pages (Apache, IIS, Nginx)</h3>
+	</li>
+	<li class='slide'>
+		<h3>Scripting languages talk to servers (PHP, C#, Python)</h3>
+	</li>
+</ol>
+</article>
+
+
+<article class='slide slide-accent'>
+<h1>What is open-source?</h1>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Open and closed source</h2>
+<ol>
+	<li class='slide'>
+		<h3>Free as in “Beer” vs. Free as in “Speech”</h3>
+	</li>
+	<li class='slide'>
+		<h3>Open-source does not mean without cost</h3>
+	</li>
+	<li class='slide'>
+		<h3>Closed source does not mean expensive</h3>
+	</li>
+	<li class='slide'>
+		<h3>(But usually that’s the case)</h3>
+	</li>
+</ol>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Know your license!</h2>
+<h3 class='slide'>A sure way to fail this class and/or be kicked out of school and/or be sued is  
+	to use <a href='http://bit.ly/o8iWW1'>copyrighted works illegally</a>
+</h3>
+<h3>&nbsp;</h3>
+<ol>
+	<li class='slide'>
+		<h3>CC BY, CC BY-SA, CC BY-ND, CC BY-NC, CC BY-NC-SA, CC BY-NC-ND</h3>
+		<h3>Attribution, Share-Alike, No-Derivitives, Non Commercial</h3>
+		<h3>(<a href='http://creativecommons.org/licenses/'>http://creativecommons.org/licenses/</a>)</h3>
+	</li>
+	<li class='slide'>
+		<h3>Unlicenses, public domain</h3>
+	</li>
+	<li class='slide'>
+		<h3>GPL, LGPL, AGPL</h3>
+	</li>
+	<li class='slide'>
+		<h3>BSD, MIT</h3>
+	</li>
+</ol>
+
+</article>
+
+<article class='slide slide-subhead'>
+ <h1>HTML / CSS / Javascript</h1>
+
+</article>
+
+<article class='slide slide-list'>
+<h2>What's the point of each?</h2>
+<ol>
+	<li class='slide'>
+		<h3>HTML <span class='slide'> - Semantics, Content, Information, Data</span></h3>
+	</li>
+	<li class='slide'>
+		<h3>CSS <span class='slide'> - Layout and Styling </span></h3>
+	</li>
+	<li class='slide'>
+		<h3>Javascript <span class='slide'> - Creating Dynamism, interaction</span></h3>
+	</li>
+</ol>
+</article>
+
+<article class='slide slide-list'>
+<h2>A Simple walk through a basic HTML site</h2>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt; .. Head Goes Here ... &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header id='site-header'&gt;
+        &lt;h1 class='logo'&gt;My Awesome Website&lt;/h1&gt;
+        &lt;nav id='main-nav'&gt;
+           &lt;ul&gt; 
+              &lt;li&gt;&lt;a href='item1.html'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href='item2.html'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+	   &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;div id='site-wrapper'&gt;
+      &lt;section id='site-content'&gt;
+	 &lt;article&gt;
+	   &lt;h1&gt;Header&lt;/h1&gt;
+	   &lt;p&gt;Lorem Ipsum&lt;/p&gt;
+	&lt;/article&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+    &lt;footer id='site-footer'&gt; ... Footer Content ... &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+</article>
+
+<article class='slide slide-list'>
+<h2>What's in the head?</h2>
+<pre>
+&lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+    &lt;link rel='stylesheet' href='style.css'&gt;
+    &lt;script src='jquery.min.js'&gt;&lt;/script&gt;
+
+    &lt;script src='application.js'&gt;&lt;/script&gt;
+&lt;/head&gt;
+... Site Content ...
+
+</pre>
+</article> 
+
+<article class='slide slide-subhead'>
+<h1>What don't you see? (<a href='http://www.csszengarden.com/'>Hint</a>)</h1>
+<h2>Which brings us to...</h2>
+</article>
+
+<article class='slide slide-list'>
+<h1>Best Practices</h1>
+<ol>
+	<li class='slide'>
+		<h3>Semantics: separate content from design</h3>
+	</li>
+	<li class='slide'>
+		<h3>Progressive Enhancement</h3>
+	</li>
+	<li class='slide'>
+		<h3>Capabilities, not browsers</h3>
+	</li>
+	<li class='slide'>
+		<h3>Responsive Design, beyond the desktop</h3>
+	</li>
+</ol>
+</article>
+		
+<article class='slide slide-list'>
+	<h1>How do you get your stuff online?</h1>
+	<ul>
+		<li class='slide'>
+			<h3>This is called deployment</h3>
+		</li>
+		<li class='slide'>
+			<h3>Normally you'll FTP your site to a host</h3>
+		</li>
+		<li class='slide'>
+			<h3>We're going to use <a href='http://github.com'>GitHub</a> - way cooler</h3>
+				<ul>
+					<li class='slide'>
+					<h3>let's you version control your code</h3>
+					</li>
+					<li class='slide'>
+					<h3>you can host static pages</h3>
+					</li><li class='slide'>
+					<h3>you will merge in new homework</h3>
+					</li>
+				</ul>				
+		</li>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Let's try it now - create a GitHub account and launch a page</h2>
+				<ul>
+					<li class='slide'>
+					<h3>go to <a href='https://github.com/'>www.GitHub.com</a></h3>
+					</li>
+					<li class='slide'>
+					<h3>choose your username and pick a password</h3>
+					</li>
+				</ul>	
+	<h2 class='slide'>Forking</h2>
+			<ul>
+				<li class='slide'>
+				<h3>go to <a href='https://github.com/cykod/web304-spring2012'>https://github.com/cykod/web304-spring2012</a></h3>
+				</li>
+				<li class='slide'>
+				<h3>click the fork button</h3>
+				</li>
+				<li class='slide'>
+					<h3>Click Admin and change the repository name to [yourusername].github.com</h3>
+				</li>
+				<li class='slide'>
+					<h3>(Click back to Admin) Next click on "Collaborators," type in "cykod" and click add</h3>
+				</li>
+				<li class='slide'>
+				<h3>open or download GitHub for Mac <br/>
+					(store this on a key to make your life easier)</h3>
+				</li>
+			</ul>					
+</article>	
+
+<article class='slide slide-list'>
+	<h2>GitHub for Mac</h2>
+	<ul>
+		<li class='slide'>
+			<h3>Open it</h3>
+		</li>
+		<li class='slide'>
+			<h3>Put in your login info</h3>
+		</li>
+		<li class='slide'>
+			<h3>Find your "username.github.com" repository</h3>
+				<ul>
+					<li class='slide'>
+					<h3>click on "clone"</h3>
+					</li>
+					<li class='slide'>
+					<h3>clone it to your key or folder you can access later</h3>
+					</li>
+					<li class='slide'>
+						<h3>Double click on it</h3>
+					</li>
+					<li class='slide'>
+						<h3>click "open in finder"<h3>
+					</li>				
+					<li class='slide'>
+						<h3>open the "1" folder and edit the index.html file in textmate </h3>
+					</li>
+					<li class='slide'>
+						<h3>go back to GitforMac and commit your changes</h3>
+					</li>
+					<li class='slide'>
+						<h3>sync your repository<h3>
+					</li>
+			</ul>				
+		</li>
+	</ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+	<h1>Your Done!</h1>
+	<p>Go to <a href="marthar.github.com/01-class-intro">[username].github.com/01-class-intro</a></p>
+	<p>wasn't that easy? <br/>(don't worry we'll do it all over again next week)</p>
+</article>	
+
+<article class='slide slide-accent'>
+	<h1>now for some fun </h1>
+	<p>(at least what we call fun)</p>
+</article>	
+
+<article class='slide slide-list'>
+<h1>State o' the art</h1>
+<ol>
+	<li class="slide">
+    <h3><a href='http://bostonglobe.com/'>New Boston Globe</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://lostworldsfairs.com/'>Lost World's Fairs</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://www.nikebetterworld.com/'>Nike Better World</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://www.20thingsilearned.com/en-US/home'>20 Things I Learned About Browsers and the Web</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://johnpolacek.github.com/WhatTheHeckIsResponsiveWebDesign-impressjs/'>Impress.js</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://acko.net/blog/making-love-to-webkit/'>Ackno.net</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://www.thisshell.com/'>This Shell</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://www.nakshart.com/#'>The Art of Stars</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://ro.me'>Ro.me</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://www.thewildernessdowntown.com/'>The Wilderness Downtown</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://benthebodyguard.com/index2.php'>Ben the Bodyguard</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://webglsamples.googlecode.com/hg/spacerocks/spacerocks.html'>SpaceRocks</a></h3>
+	</li>
+	<li class="slide">
+    <h3><a href='http://webglsamples.googlecode.com/hg/aquarium/aquarium.html'>Google Aquarium</a></h3>
+	</li>
+
+</ol>
+
+
+</article>
+
+<article class='slide slide-homework'>
+<h2>Homework</h2>
+	<h3 class='slide'>Reading</h3>
+	<ul class='slide'>	
+			<li>
+				<h3><a href='http://www.alistapart.com/articles/dao/'>A Dao of Web Design by John Allsopp</a>			
+				</h3>
+			</li>
+			<li>
+				<h3><a href='http://www.alistapart.com/articles/understandingwebdesign/'>Understanding Web Design by Jeffrey Zeldman</a>
+				</h3>
+			</li>
+	</ul>
+	
+	<h3 class='slide'>Coding</h3>
+       <ul class='slide'>
+			<li>
+				<h3>Finish entering your name, class and info</h3>
+			</li>
+			<li>
+				<h3>Add the link to your completed homework to your homework file- then Push to Github</h3>
+			</li>
+		</ul>
+</ul>	
+</article>
+
+<article class='slide slide-list'>
+	<h1>Questions and/or Problems?</h1>
+	<ul>
+		<li>
+		<h3>if it's a general question that the rest of the class might benefit from seeing post a message to me at <a href="http://groups.google.com/group/web304-spring2012"> google groups</a></h3>
+		</li>		
+		<li>	
+		<h3>email me : <a href="mailto:martha@cykod.com">martha@cykod.com</a></h3>
+		</li>
+		<li>
+		<h3>I have office hours here at MassArt in T609 on Mondays from 1:00-2:00</h3>
+		</li>
+	</ul>
+</article>		
+	
+
+<!-- Update these paths to point to the correct files. -->
+<script src="js/jquery.min.js"></script>
+<script src="js/deck.core.js"></script>
+
+
+<!-- Ace -->
+<script src="js/ace/ace-uncompressed.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ace/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ace/mode-html.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ace/mode-css.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Add any other extension JS files here -->
+<!-- Deck Core and extensions -->
+<script src="js/deck.status.js"></script>
+<script src="js/deck.navigation.js"></script>
+<script src='js/deck.coder.js'></script>
+<script src="js/deck.hash.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>

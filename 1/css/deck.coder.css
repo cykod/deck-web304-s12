@@ -1,0 +1,19 @@
+
+
+
+.coder-wrapper {
+
+}  
+
+.deck-container .coder-editor {
+  font-family:'Droid Sans Mono', 'Courier New', monospace;
+  font-size:18px;
+
+}
+
+.deck-container .coder-destination { 
+  display:none;
+  padding:5px;
+  border:1px solid #CCCCCC;
+  margin:5px;
+}
