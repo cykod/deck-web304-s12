@@ -31,11 +31,22 @@ $light-color:#999999;
 	
 	.slide {
 		background:#fff;
+		h1 { 
+			  -webkit-transform:none;
+		      -moz-transform:none;
+		      -ms-transform:none;
+		      -transform:none;
+		      -o-transform:none;
+		position:relative;
+		top:0;
+			}
 	}
 	
 	.slide-accent {
 		background:$callout-color;
-		h1 { font-size:4em; @include slab-font; color:white; text-transform:none; padding-top:3em;}
+		h1 { font-size:4em; @include slab-font; color:white; text-transform:none; 
+			position:absolute; top:30%;
+			}
 		p { font-size:1.5em; @include body-font; color:white; text-align:center; text-transform:none; padding-top:0;}
 	}
 	
@@ -49,7 +60,10 @@ $light-color:#999999;
 	}
 	
 	.slide-list {
-		h1 { font-size:3.5em; text-align:left; line-height:.9em; color:$complimentary-color; border-bottom:4px solid $light-color; padding:.2em 1em .07em 0; margin-bottom:.3em; }
+		h1 { font-size:3.5em; text-align:left; line-height:.9em; color:$complimentary-color; border-bottom:4px solid $light-color; padding:.2em 1em .07em 0; margin-bottom:.3em; 
+			 position:relative;  left:0; 
+		 
+			}
 		h2 { border-bottom:4px solid $light-color; padding:.5em 1em .07em 0; margin-bottom:.5em;}
 		h3, p { @include body-font; font-size:1.3em; color:$main-color; margin-bottom:.3em;}
 		ol { list-style-type: decimal; @include body-font; font-size:.9em; color:$light-color; margin-left:1em;
@@ -68,16 +82,17 @@ $light-color:#999999;
 	.slide-homework {
 		padding:0 10%;
 		background:black;
-		h1 { font-size:3.5em; text-align:left; background-color:inherit; line-height:.9em; color:white; border-bottom:4px solid $light-color; padding:.2em 1em .07em 0; margin-bottom:.3em; }
-		h2 { border-bottom:4px solid $light-color; background-color:inherit; padding:.5em 1em .07em 0; margin-bottom:.5em;}
-		h3 { background-color:inherit; @include body-font; font-size:1.1em; color:white; margin-bottom:.3em;}
-		ol { list-style-type: decimal; @include body-font; font-size:1.1em; color:$light-color; margin-left:1em;
+		h1 {  font-size:3.5em; text-align:left; background-color:inherit; line-height:.9em; color:white; border-bottom:4px solid $light-color; padding:.2em 1em .07em 0; margin-bottom:.3em; }
+		h2 { color:$light-color; border-bottom:4px solid $light-color; background-color:inherit; padding:.5em 1em .07em 0; margin-bottom:.5em;}
+		h3 { background-color:inherit; @include body-font; font-size:1.5em; color:white; margin-bottom:.3em;}
+		ol { list-style-type: decimal; @include body-font; font-size:1.5em; color:$light-color; margin-left:1em;
 				ul { @include body-font; font-size:1.0em; margin-left:.5em; padding:0 0;}
 			}	
 		ul { background-color:inherit; list-style-type: square; @include body-font; font-size:1.1em; color:$light-color; margin-left:1em;
 				ul { @include body-font; list-style-type:none; font-size:1.0em; margin-left:.5em; padding:0 0;
 					li {background-color:inherit;  padding-left:.5em; padding-top:.2; padding-bottom:0; margin-top:.5em; }
 					}
+				h3 {font-size:1.0em;}	
 			}
 		li { background-color:inherit;  padding-left:.5em; padding-bottom:.5em; }
 		p { @include body-font; }		
@@ -86,6 +101,11 @@ $light-color:#999999;
 	}
 	
 	.slide-subhead { 
+		h1 { font-size:5em; position:static; margin:0px; padding-top:1em; 
+	    
+	    }
+		h2 { font-size:2em; text-align:center; margin:0px; padding:0px; }
+	
 		h1 { font-size:5em; margin:0; line-height:.9em; color:$complimentary-color; }
 		h2 { font-size:3em; text-align:center; padding-top:0; margin-bottom:0;}
 		p { font-size:1.5em; text-align:center; color:$main-color; line-height:1.25em; margin-top:.5em;}

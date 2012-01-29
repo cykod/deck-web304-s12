@@ -5,21 +5,13 @@
 	<title>Web Design 1 - Class 2</title>
 	<meta name="viewport" content="width=1024">
 	
-	<!-- Replace path with correct path to deck.core.css. -->
-	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
+
 	
-	<!-- Any other extension CSS files go here. -->
-	<!-- link rel="stylesheet"  id='transition-theme-link' href="horizontal-slide.css" type="text/css" --> 
+        <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
 	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
-	
-	<!-- Core and extension CSS files -->
-	<link rel="stylesheet" href="css/deck.navigation.css">
-	<link rel="stylesheet" href="css/deck.status.css">
-	<link rel="stylesheet" href="css/deck.hash.css">
-	<link rel="stylesheet" href="css/deck.coder.css">
-	
-	<!-- Replace path with correct path to Modernizr file. -->
-	<script src="js/modernizr.js"></script>
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
 
 	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -168,8 +160,9 @@
 </article>
 
 <article class='slide slide-image'>
-	<h3><img src="images/html5-shield-1.jpg" class='top-image'/></h3>
-	<h1>HTML5</h1>
+		<img src="images/html5-shield-1.jpg" class='top-image'/>
+	<h1>HTML5
+	</h1>
 	<p>Last numbered version of HTML<br/>
 	Browser makers driving features<br/>
 	Feature coming fast and furious</p>
@@ -410,17 +403,19 @@
 
 <article class='slide slide-list'>
 	<h2>&lt;head&gt; = Meta Info</h2>
-	<pre>
+	<pre class='prettyprint'>
 &lt;head&gt;
   &lt;title&gt;Page Title - important &amp; Required&lt;/title&gt;
-	&lt;meta name='description' content='Page description -
-	only important for search results page'/&gt;<br/>
-	&lt;meta name='keywords' content='Keywords,
-	not that important'/&gt;<br/>
-	&lt;link href="stylesheet.css" rel="Stylesheet" type="text/css" /&gt;
-	...more stylesheets...<br/>
-	&lt;script src="somejavascriptfile.js"&gt;&lt;/script&gt;
-	...more scripts...<br/>
+  &lt;meta name='description' 
+        content='Page description - only important for search results page'/&gt;
+  
+  &lt;meta name='keywords' content='Keywords, not that important'/&gt;
+
+  &lt;link href="stylesheet.css" rel="Stylesheet" type="text/css" /&gt;
+  ...more stylesheets...
+
+  &lt;script src="somejavascriptfile.js"&gt;&lt;/script&gt;
+  ...more scripts...
 &lt;/head&gt;		
 	</pre>		
 </article>
@@ -456,15 +451,6 @@
 	</ul>			
 </article>
 
-<article class='slide slide-list'>
-	<h2>&lt;article&gt;</h2>
-	<ul>
-		<li><h3>Self-contained piece of content</h3>
-		</li>
-		<li><h3>forum post,<br/>magazine article,<br/>newspaper article,<br/>blog entry, <br/>user-submitted comment, <br/>interactive widget, <br/>independent item of content.</h3>
-		</li>
-	</ul>			
-</article>
 
 <article class='slide slide-list'>
 	<h2>&lt;article&gt;</h2>
@@ -534,22 +520,16 @@
 <h1>Reminder! your HTML is not your design</h1>
 </article>
 
-<article class='slide slide-image'>
-	<h3><img src="images/layout.jpg" width='600' class='top-image'/></h3>
-	<h1>Layout with Absolute Positioning, 
-	Floats &amp; the box model</h1>
-</article>
-
 <article class='slide slide-list'>
 	<h1>Tags We’ll be using</h1>
 	<p>The new (HTML5) semantic tags:<br/> <em>&lt;head&gt;, &lt;nav&gt;, &lt;section&gt;,&lt;article&gt;, &lt;footer&gt;, &lt;aside&gt;</em>
-	</p>
+	</p></br>
 	<p>The generic containers:  <em>&lt;div&gt;</em> and  <em>&lt;span&gt;</em>
-	</p>
+	</p></br>
 	<p>Images (<em>&lt;img&gt;</em>) and hyperlinks (<em>&lt;a&gt;</em>)
-	</p>
+	</p></br>
 	<p>The old semantic tags, including paragraph (<em>&lt;p&gt;</em>), headers (<em>&lt;h1&gt;</em>,<em>&lt;h2&gt;</em>,<em>&lt;h3&gt;</em>,<em>&lt;h4&gt;</em>)
-	</p>
+	</p></br>
 	<p>Lists, primarily unordered (<em>&lt;ul&gt;</em>). Unordered lists are often used for lists of menu items, form items, bulleted items, pretty much anything where there's a list of items that need to be styled consistently.
 	</p>		
 </article>
@@ -568,40 +548,8 @@
 
 <article class='slide slide-list'>
 <h2>Blog Post Chop</h2>
-<textarea class='coder-editor coder-editor-split coder-editor-instant' data-language='html' data-save='S2012-blog-post-chop'>
+<textarea class='coder-editor coder-editor-split coder-editor-instant'  data-save='S2012-blog-post-chop'>
 </textarea>
-<script type='coder-solution'>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-    <link rel="stylesheet" type='text/css' href="sample.css" />
-  </head>
-  <body> 
-<article>
-  <h2>August 11, 2011</h2>
-  <h1>Designing Fun</h1>
-  <p class="attribution">
-    by 
-    <span class="author-name">
-      Deborah Levin Gelman
-    </span>
-  </p>
-  <nav id="blog">
-  	<ul>
-          <li>Published in</li>
-          <li><a href="/userinterface">UI,</a></li>
-          <li><a href="#">Design Stuff,</a></li>
-          <li>Article blabla</li>
-    	</ul> 
-  </nav>  
-  <img alt="frowning baseball man"src="images/blog-image.png"/>  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet erat non massa venenatis vel cursus magna pharetra. Fusce at tellus tellus, vel placerat leo. Etiam ac velit vel nunc sodales faucibus quis et leo. Quisque ornare neque eget purus luctus pellentesque. Proin magna nunc, ornare vitae suscipit et, faucibus at quam. In hac habitasse platea dictumst. Donec adipiscing, nunc malesuada faucibus adipiscing, arcu turpis vulputate elit, sed venenatis nibh lacus a ante. Quisque blandit dignissim eros. Morbi tincidunt dignissim molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </p>  
-</article>
-</body>
-</html>
-</script>
 </article>
 
 <article class='slide slide-list'>
@@ -611,7 +559,7 @@
 
 <article class='slide slide-list'>
 <h2>Chop a Full Site</h2>
-<textarea class='coder-editor coder-editor-split coder-editor-instant' data-language='html' data-save='S2012-full-site-chop'>
+<textarea class='coder-editor coder-editor-split coder-editor-instant' data-save='S2012-full-site-chop'>
 </textarea>
 </article>
 
@@ -619,7 +567,7 @@
 
 <article class='slide slide-list'>
 <h2>Basic Site Template</h2>
-<textarea class='coder-editor coder-editor-split coder-editor-instant' data-language='html'>
+<textarea class='coder-editor coder-editor-split coder-editor-instant'>
 <!DOCTYPE html>
 <html>
   <head>
@@ -706,31 +654,8 @@
 	
 </article>
 
+<script src='dist/coderdeck.js'></script>
 
-<!-- Update these paths to point to the correct files. -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.tmpl.min.js"></script>
-<script src="js/deck.core.js"></script>
-<script src="js/prettify.js"></script>
-
-<!-- Code Mirror -->
-<script src="js/codemirror/codemirror.js"></script>
-<link rel="stylesheet" href="js/codemirror/codemirror.css">
-<script src="js/codemirror/mode/javascript/javascript.js"></script>
-<link rel="stylesheet" href="js/codemirror/theme/default.css">
-<script src="js/codemirror/mode/xml/xml.js"></script>
-<script src="js/codemirror/mode/css/css.js"></script>
-<script src="js/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-
-
-<!-- Add any other extension JS files here -->
-<!-- Deck Core and extensions -->
-<script src="js/deck.status.js"></script>
-<script src="js/deck.navigation.js"></script>
-<script src='js/deck.coder.js'></script>
-<script src="js/deck.hash.js"></script>
-
-<!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
 	$(function() {
 		$.deck('.slide');

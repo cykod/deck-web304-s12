@@ -5,6 +5,14 @@
   background: #fff; }
   .deck-container .slide {
     background: #fff; }
+    .deck-container .slide h1 {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -transform: none;
+      -o-transform: none;
+      position: relative;
+      top: 0; }
   .deck-container .slide-accent {
     background: #669933; }
     .deck-container .slide-accent h1 {
@@ -13,7 +21,8 @@
       font-weight: 700;
       color: white;
       text-transform: none;
-      padding-top: 3em; }
+      position: absolute;
+      top: 30%; }
     .deck-container .slide-accent p {
       font-size: 1.5em;
       font-family: adelle,serif;
@@ -45,7 +54,9 @@
     color: #d3502c;
     border-bottom: 4px solid #999999;
     padding: .2em 1em .07em 0;
-    margin-bottom: .3em; }
+    margin-bottom: .3em;
+    position: relative;
+    left: 0; }
   .deck-container .slide-list h2 {
     border-bottom: 4px solid #999999;
     padding: .5em 1em .07em 0;
@@ -104,6 +115,7 @@
       padding: .2em 1em .07em 0;
       margin-bottom: .3em; }
     .deck-container .slide-homework h2 {
+      color: #999999;
       border-bottom: 4px solid #999999;
       background-color: inherit;
       padding: .5em 1em .07em 0;
@@ -112,14 +124,14 @@
       background-color: inherit;
       font-family: adelle,serif;
       font-weight: 400;
-      font-size: 1.1em;
+      font-size: 1.5em;
       color: white;
       margin-bottom: .3em; }
     .deck-container .slide-homework ol {
       list-style-type: decimal;
       font-family: adelle,serif;
       font-weight: 400;
-      font-size: 1.1em;
+      font-size: 1.5em;
       color: #999999;
       margin-left: 1em; }
       .deck-container .slide-homework ol ul {
@@ -149,6 +161,8 @@
           padding-top: .2;
           padding-bottom: 0;
           margin-top: .5em; }
+      .deck-container .slide-homework ul h3 {
+        font-size: 1.0em; }
     .deck-container .slide-homework li {
       background-color: inherit;
       padding-left: .5em;
@@ -156,6 +170,16 @@
     .deck-container .slide-homework p {
       font-family: adelle,serif;
       font-weight: 400; }
+  .deck-container .slide-subhead h1 {
+    font-size: 5em;
+    position: static;
+    margin: 0px;
+    padding-top: 1em; }
+  .deck-container .slide-subhead h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0px;
+    padding: 0px; }
   .deck-container .slide-subhead h1 {
     font-size: 5em;
     margin: 0;
