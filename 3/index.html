@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Design 1 - Class 3</title>
+	<meta name="viewport" content="width=1024">
+	
+
+	
+        <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Information Architecture</h1>
+<h2>Week 3</h2>
+<p>CDGD304 - Spring 2012<br/>
+ <a href='http://cykod.github.com/deck-web304-s12/3/'>http://cykod.github.com/deck-web304-s12/3/</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+	<ol>
+		<li class="slide">
+			<h3>Review Homework</h3>
+		</li>
+		<li class="slide">
+			<h3>Discuss Readings</h3>
+		</li>
+		<li class="slide">
+			<h3>What is Web Design?</h3>
+		</li>
+		<li class="slide">
+			<h3>User Expectations</h3>
+		</li>
+		<li class="slide">
+			<h3>Information Architecture</h3>
+		</li>
+		<li class="slide">
+			<h3>User Stories</h3>
+		</li>
+		<li class="slide">
+			<h3>Wireframing</h3>
+		</li>
+		<li class="slide">
+			<h3>Exercises</h3>
+		</li>
+	</ol>
+</article>
+
+<article class="slide slide-image">
+	<img src='images/dogsvscat.png'/>
+</article>
+
+<article class="slide slide-list">
+	<h2>Homework Review</h2>
+	<script>
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+function shuffleHomework(amt) {
+	if(amt <= 0) return;
+	$("#homework li").shuffle();
+	setTimeout(function() { shuffleHomework(amt - 1); },200);
+}
+
+	</script>
+	<a href='javascript:shuffleHomework(10);'>Shuffle</a>
+	<ul id='homework'>
+		<li><a href='http://lcamoroso.github.com/homework/index.html'>lcamoroso </a></li>
+		<li><a href='http://HilaryBraun.github.com/homework/index.html'>HilaryBraun</a></li>
+		<li><a href='http://adelenadent.github.com/homework/index.html'>adelenadent</a></li>
+		<li><a href='http://MadsG.github.com/homework/index.html'>MadsG</a></li>
+		<li><a href='http://erherskovitz.github.com/homework/index.html'>erherskovitz</a></li>
+		<li><a href='http://JuliDanielle.github.com/homework/index.html'>JuliDanielle</a></li>
+		<li><a href='http://ssuejkim.github.com/homework/index.html'>ssuejkim</a></li>
+		<li><a href='http://elknapp.github.com/homework/index.html'>elknapp</a></li>
+		<li><a href='http://linakong.github.com/homework/index.html'>linakong</a></li>
+		<li><a href='http://erikaleahey.github.com/homework/index.html'>erikaleahey</a></li>
+		<li><a href='http://zrmccarthy.github.com/homework/index.html'>zrmccarthy</a></li>
+		<li><a href='http://crpressman.github.com/homework/index.html'>crpressman</a></li>
+		<li><a href='http://MikeTavilla.github.com/homework/index.html'>MikeTavilla</a></li>
+	</ul>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>What is Web design?</h1>
+</article>
+
+<article class='slide slide-image'>
+	<h3><img src="images/alistapart-logo.gif" class='top-image'/></h3>
+	<h1>A List Apart Says:</h1>
+	<p class='slide'>Web design is the creation of digital 
+		environments that facilitate and encourage 
+		human activity; reflect or adapt to individual 
+		voices and content; and change gracefully over 
+		time while always retaining their identity.</p>
+	<p class="slide"><span class="callout"> -alistapart.com/articles/understandingwebdesign</span></p>
+</article>
+
+<article class='slide slide-image'>
+<h1><img src="images/wikipedia.jpg" class='top-image'/>Wikipedia Says:</h1>
+<p class='slide'>
+Web Design is the skill of creating presentations of content (usually hypertext or hypermedia) that is delivered to an end-user through the World Wide Web, by way of a Web browser or other Web-enabled software like Internet television clients, microblogging clients and RSS readers.
+</p>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Web Design lets content do it's thing on on the web</h1>
+</article>
+				
+<article class="slide slide-image">
+	<h1>A Website is not..</h1><br/>
+	<h2 class="slide">a book!<br/>
+	<span class="slide">a brochure!</span></br>
+	<span class="slide">or a poster!</span></h2>
+</article>
+
+
+<article class='slide slide-image'>
+<h1>What is good design?</h1>
+<p class='slide'>
+		Reminded of a famous Supreme Court Quote:<br/><br/>
+		I shall not today attempt further to deﬁne the kinds of material I understand to be embraced within that shorthand 
+		description; and perhaps I could never succeed in intelligibly doing so. <b>But I know it when I see it</b>, and the motion 
+picture involved in this case is not that.</p>
+</article>
+
+<article style='background-image:url(images/mac.jpg);' class='slide slide-background-content'>
+<h2>Know your audience...</h2>
+</article>	
+
+<article style='background-image:url(images/pc.jpg);' class='slide slide-background-content'>
+<h2>Know your audience...</h2>
+</article>
+
+
+<article style='background-image:url(images/etsy.jpg);' class='slide slide-background-content'>
+<h2>Know your content...</h2>
+</article>	
+
+<article style='background-image:url(images/espn.jpg);' class='slide slide-background-content'>
+<h2>Know your content...</h2>
+</article>
+
+
+<article style='background-image:url(images/desktop.jpg);' class='slide slide-background-content'>
+<h2>Know your medium...</h2>
+</article>	
+
+<article style='background-image:url(images/tablet.jpg);' class='slide slide-background-content'>
+<h2>Know your medium...</h2>
+</article>
+
+<article style='background-image:url(images/phone.jpg);' class='slide slide-background-content'>
+<h2>Know your medium...</h2>
+</article>
+
+
+<article class='slide slide-accent'>
+	<h1>User Expectations</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h2>You are designing for people...</h2>
+<ul>
+	<li class="slide"><h3>with Modern browsers</h3></li>
+	<li class="slide"><h3>with old browsers</h3></li>
+	<li class="slide"><h3>who can’t see well</h3></li>
+	<li class="slide"><h3>who can’t see at all</h3></li>
+	<li class="slide"><h3>who visit your site every day</h3></li>
+	<li class="slide"><h3>who are visiting for the ﬁrst time</h3></li>
+	<li class="slide"><h3>who aren’t people but machines (SEO)</h3></li>
+</ul>
+</article>
+
+<article class="slide slide-subhead">
+<h2><br/><br/>You are also designing for<br/> <em>2011 Web Surfers</em></h2>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Think about who will use the website and their needs</h2>
+	<ul>
+		<li class='slide'>
+			<h3>I want to buy something</h3>
+		</li>
+		<li class='slide'>
+			<h3>Google sent me here</h3>
+		</li>
+		<li class='slide'>
+			<h3>I just want your phone number</h3>
+		</li>
+		<li class='slide'>
+			<h3>Where are you located?</h3>
+		</li>		
+	</ul>				
+</article>
+
+<article class='slide slide-subhead'>
+<h1>What is this?</h2>
+<h2><br/><br/>
+	<a style='color:#0645AD; text-decoration:underline; font-family:Arial; font-size:60px;' href='#'>My Article</a>
+</h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>What is this?</h2>
+<h2><br/><br/>
+	<img src="images/buy-amazon.png" alt="Buy Button" />
+</h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Where do you look to log into a site?</h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>How do you go back to the Homepage?</h2>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Feed into<br/>User Expectations</h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>Good Conventions</h2>
+<ul>
+	<li class="slide">
+		<h3>Underline is a link</h3>
+	</li>
+	<li class="slide">
+		<h3>@something</h3>
+	</li>
+	<li class="slide">
+		<h3>name@something.com</h3>
+	</li>
+	<li class="slide">
+		<h3>google.com</h3>
+	</li>
+	<li class="slide">
+		<h3>Where is the login link?</h3>
+	</li>
+	<li class="slide">
+		<h3>What does clicking the logo do?</h3>
+	</li>
+	<li class="slide">
+		<h3>What does the back button do?</h3>
+	</li>
+	<li class="slide">
+		<h3>What does dragging over text do?</h3>
+	</li>
+	<li class="slide">
+		<h3>Standard names “Contact Us”, “About Us”</h3>
+	</li>
+	<li class="slide">
+		<h3>Extra links - like “Privacy Policy”, “Terms of Use” are where?</h3>
+	</li>
+</ul>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Some Bad Conventions</h2>
+<ul>
+	<li class="slide">
+		<h3>Interior Scrollbars</h3>
+	</li>
+	<li class="slide">
+		<h3>No scrollbars</h3>
+	</li>
+	<li class="slide">
+		<h3>Frames</h3>
+	</li>
+	<li class="slide">
+		<h3>Auto-playing media</h3>
+	</li>
+	<li class="slide">
+		<h3>No back button</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Information Architecture</h1>
+<p class='slide'>is a big word...</p>
+</article>
+
+<article style='background-image:url(images/ia.png);' class='slide slide-background-content'>
+<h2>What is IA?</h2>
+</article>
+
+<article class='slide slide-accent'>
+<h1>How about:<br/> have a plan</h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>Things to think about</h2>
+<ul>
+	<li class="slide">
+		<h3>Your site navigation - main, bottom, etc</h3>
+	</li>
+	<li class="slide">
+		<h3>What do users want to see?</h3>
+	</li>
+	<li class="slide">
+		<h3>What do users need to see?</h3>
+	</li>
+	<li class="slide">
+		<h3>Does the site hierarchy make sense?</h3>
+	</li>
+	<li class="slide">
+		<h3>How may clicks deep?</h3>
+	</li>
+	<li class="slide">
+		<h3>Think about normal user ﬂow: "User Stories"</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-subhead'>
+<h2><br/><br/>Many restaurants are a perfect example of NOT thinking of user stories</h2>
+</article>
+
+<article class='slide slide-list'>
+<h2>Restaurants</h2>
+<ul>
+	<li><h3>They think: I want to show people how amazing the experience here is</h3></li>
+	<li><h3><a href='http://theoatmeal.com/comics/restaurant_website'>Actual Use Cases</a></h3></li>
+
+</ul>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Universities</h1>
+</article>
+
+<article style='background-image:url(http://imgs.xkcd.com/comics/university_website.png);' class='slide slide-background'>
+</article>
+
+<article class='slide slide-accent'>
+<h1>user stories</h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>User stories, think about:</h2>
+<li class="slide">
+	<h3>Who is visiting your site (give them a name)</h3>
+</li>
+<li class="slide">
+	<h3>Their goals and how they got to your site</h3>
+</li>
+<li class="slide">
+	<h3>How can you help them and keep them interested?</h3>
+</li>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Exercise 1: Local Coffeeshop</h1>
+<h2>Pair up and write 3 user stories for visitors to a local coffeeshop's website</h2>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Exercise 2: Bed and Breakfast</h1>
+<h2>Pair up and write 3 user stories for visitors to a bed and breakfast website</h2>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Exercise 3: Lawyer website</h1>
+<h2>Pair up and write 3 user stories for visitors to a personal injury laywer's website</h2>
+</article>
+
+
+<article slide class="slide slide-accent">
+	<h1>Wireframes & Sitemaps</h2>
+</article>
+
+<article style='background-image:url(images/sitemap.png);' class='slide slide-background-content'>
+<h2>Sitemaps</h2>
+</article>	
+
+<article class='slide slide-list'>
+<h1>Why Make Sitemaps?</h1>
+	<ul>
+		<li class="slide">
+			<h3>Help you define the content on your site</h3>
+		</li>
+		<li class="slide">
+			<h3>Force you to break down all the pages and sections of your site</h3>
+		</li>
+		<li class="slide">
+			<h3>They help you work out how content will be organized</h3>
+		</li>
+		<li class="slide">
+			<h3>Help you create a better hierarchy</h3>
+		</li>	
+	</ul>		
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Wireframing</h1>
+<h2>Great way to look at the big picture. Don't start with a perfect mockup, do something crude and basic first.
+</h2>
+</article>
+
+<article class='slide slide-accent'>
+	<h1><a href='http://webdesignledger.com/inspiration/18-great-examples-of-sketched-ui-wireframes-and-mockups'>Some Great Examples</a>
+	</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h1>What is Wireframing?</h1>
+	<ul>
+		<li class="slide">
+			<h3>Sketch out what the user experience will be like</h3>
+		</li>
+		<li class="slide">
+			<h3>Illustrate page layout and functionality</h3>
+		</li>
+		<li class="slide">
+			<h3>Demonstrate how a user will navigate the site</h3>
+		</li>
+		<li class="slide">
+			<h3>Demonstrate how user-interfaces and interactive tools will work</h3>
+		</li>
+		<li class="slide">
+			<h3>Identify static and dynamically generated content areas</h3>
+		</li>	
+	</ul>		
+</article>
+
+<article class='slide slide-list'>
+<h2>Some tools</h2>
+<ul>
+	<li class='slide'><h3><a href='http://balsamiq.com/products/mockups'>Balsamiq</a></h3></li>
+	<li class='slide'><h3><a href='https://gomockingbird.com/'>Mockingbird</a></h3></li>
+	<li class='slide'><h3><a href='http://www.omnigroup.com/products/omnigraffle/'>Omnigrafﬂe</a></h3></li>
+	<li class='slide'><h3>Free: <a href='http://mashable.com/2010/07/15/wireframing-tools/'>Mashable Article</a></h3></li>
+	<li class='slide'><h3>Big piece of paper and sharpie</h3></li>
+</ul>
+</article>
+
+
+<article class='slide slide-homework'>
+<h1>Homework</h1>
+	<h2 class='slide'>Reading</h2>
+		<ul class='slide'>	
+			<li>
+                <h3><a href='http://www.alistapart.com/articles/the-case-for-content-strategy-motown-style/'>The Case for Content Strategy—Motown Style</a>
+				</h3>
+			</li>
+			<li>
+                <h3><a href='http://www.alistapart.com/articles/designingforflow/'>Designing For Flow</a>
+				</h3>
+			</li>
+		</ul>
+	<h2 class='slide'>Coding</h2>
+       <ul class='slide'>
+			<li>
+				<h3>3 Sites, 2 user stories per site, 1 page sketches of 1 page per site</h3>
+			</li>
+			<li>
+				<h3>Include navigation, main page elements, content layout</h3>
+			</li>
+			<li>
+				<h3>Choose from</h3>
+				<ul>
+					<li>
+						<h3>Shop</h3>
+						<h3>Blog</h3>
+						<h3>Agency</h3>
+						<h3>Portfolio</h3>
+						<h3>Band Site</h3>
+						<h3>Restaurant</h3>
+					</li>
+				</ul>
+			</li>
+			<li><h3>Get your sketches onto a computer and add them to the 2/ directory on github and publish</h3></li>
+		</ul>
+</ul>	
+	
+	
+</article>
+
+<script src='dist/coderdeck.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
