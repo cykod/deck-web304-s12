@@ -238,76 +238,6 @@ function shuffleHomework(amt) {
 </article>
 
 
-<article class="slide slide-list">
-<h1>Selector combinations </h1>
-<ul>
-	 <li class='slide'>
-		 <h3> Can have a declaration apply to multiple 
-			 styles with a comma (,)</h3>
-			<ul>
-				<li><em>.my-class-one, .my-class-two</em> { color:red; }</li>
-		 	</ul>
-	</li>
-	<li class='slide'>
-		<h3> Can “Cascade” styles with spaces between selectors</h3>
-			<ul>
-				<li>HTML<pre>&lt;div id='outer'&gt;&lt;p&gt; ... &lt;/p&gt;&lt;/div&gt;</pre>
-			 		CSS<pre><em>#outer p </em> { color:red; } /* only p's inside of outer */</pre>
-				</li>
-		 	</ul>
-	</li>
-	<li class='slide'>
-		<h3> Can select only "child" styles with &gt; signs</h3>
-			<ul>
-				<li>HTML<pre>&lt;div id='outer'&gt;&lt;div&gt;&lt;div&gt; ... &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</pre>
-					CSS<pre><em>#outer > div </em> { background-color:red; } /* only div's that are direct children of outer */</pre>
-				</li>
-		 	</ul>
-	</li>
-	<li class='slide'>
-		<h3>Psudeo-classes that apply to elements in certain conditions</h3>
-			<ul>
-				<li><em>a:hover</em> { color:blue; } /* only links we are hovering over */<br/>
-					<em>a:visited</em> { color:red; } /* links we've visited already */<br/>
-					<em>p:first-child</em> { color:red; } /* the first paragraph in a container */<br/>
-				</li>
-			</ul>		
-	</li>
-	<li class='slide'>
-		<h3>Also can select by arbitrary attributes</h3>
-			<ul>
-				<li><em>input[type=radio]</em>{ color:blue; } /* only radio buttons */<br/></li>
-			</ul>	
-	</li>
-</ul>
-</article>
-
-<article class='slide slide-list'>
-<h2>Selector Combination Exercise</h2>
-<textarea class='coder-editor coder-editor-split coder-editor-instant' data-coder-template="coderdeck-plain" id='coderdeck-default'>
-<style>
-
-</style>
-<header>
-  <h1>My Site!</h1>
-  <nav><ul>
-    <li><a href='#'>Link 1</a></li>
-    <li><a href='#'>Link 2</a></li>
-  </ul></nav>
-</header>
-
-<section id='content'>
-  <article class='blog-post'>
-    <h1>Blog Post 1</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
-  </article>
-  <article class='blog-post'>
-    <h1>Blog Post 1</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
-  </article>
-
 </section>
 <footer>
   <a href='#'>Link 1</a> | <a href='#'>Link 2</a>
@@ -418,7 +348,7 @@ function shuffleHomework(amt) {
 
 
 <article class='slide slide-image'>
-<h1>Exercise: we want this</h1>
+<h1>In Class Exercise 1: we want this</h1>
 <img src='images/position-exercise.png'/>
 </article>
 
@@ -541,19 +471,6 @@ aside#sidebar { float:right; width:220px; padding:50px 10px;; }
 footer#site-footer {     clear:both; background-color:black;     color:white; padding:10px 0px;  }</pre>
 </article>
 
-<article class='slide slide-list'>
-	<h1>In Class Exercise 1</h1>
-	<p>Default paragraphs to two paragraphs, with floated images<br/>
-		<h3><br/><img src="images/css-default.png" class='top-image'/><br/><br/></h3>
-</article>
-
-
-<article class='slide slide-list'>
-	<h1>End Result</h1>
-		<h3><br/><img src="images/css-style.png" class='top-image'/><br/><br/></h3>
-</article>
-
-
 <article class="slide slide-list">
 <h1>Floats, Clears and Clearfix</h1>
 	<ul>
@@ -591,7 +508,7 @@ footer#site-footer {     clear:both; background-color:black;     color:white
 </article>
 	
 <article class='slide slide-list'>
-<h2>Exercise</h2>
+<h2>In Class Exercise 2</h2>
 <textarea class='coder-editor coder-editor-full'>
 
 <style>
@@ -755,6 +672,18 @@ body {
 </footer>
 
 </script>
+</article>
+
+<article class='slide slide-list'>
+	<h1>Homework</h1>
+	<p>Default paragraphs to two paragraphs, with floated images<br/>
+		<h3><br/><img src="images/css-default.png" class='top-image'/><br/><br/></h3>
+</article>
+
+
+<article class='slide slide-list'>
+	<h1>End Result</h1>
+		<h3><br/><img src="images/css-style.png" class='top-image'/><br/><br/></h3>
 </article>
 
 
