@@ -2,12 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Web Design 1 - Class 3</title>
+	<title>Web Design 1 - Class 5</title>
 	<meta name="viewport" content="width=1024">
 	
-
 	
-        <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+    <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
 	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
 
 	<script src='dist/jquery.min.js'></script>
@@ -16,15 +15,70 @@
 	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='dist/jquery.min.js'>SCRIPTEND
+	    </head>
+	    <body>
+		    CODE
+	    </body>
+	</html>
+	</script>
+
+	<script type='text/coderdeck' id='coderdeck-css-playground'>
+		<html>
+			<title>test</title>
+				CODE
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Pargraph of text &lt;p&gt;</p>
+				<div class='stuff'>&lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>&lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script>
+
+
+	<script type='text/coderdeck' id='coderdeck-plain'>
+		<html>
+			<title>test</title>
+			<link rel="stylesheet" href="reset.css">
+			<body>
+				CODE
+			</body>
+		</html>
+	</script>
+
+
+
+	<script type='text/coderdeck' id='coderdeck-style-example'>
+		<html>
+			<title>test</title>
+			<style>
+				CODE
+			</style>
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Pargraph of text &lt;p&gt; here</p>
+				<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script> 	
+	
+	
 </head>
 <body class="deck-container">
 
 <!-- Create any number of elements with class slide within the container -->
 <article class='slide slide-subhead'>
-<h1>Information Architecture</h1>
-<h2>Week 3</h2>
+<h1>CSS - Styling</h1>
+<h2>Week 5</h2>
 <p>CDGD304 - Spring 2012<br/>
- <a href='http://cykod.github.com/deck-web304-s12/3/'>http://cykod.github.com/deck-web304-s12/3/</a></p>
+ <a href='http://cykod.github.com/deck-web304-s12/5/'>http://cykod.github.com/deck-web304-s12/5/</a></p>
 </article>
 	
 <article class='slide slide-list'>
@@ -37,28 +91,15 @@
 			<h3>Discuss Readings</h3>
 		</li>
 		<li class="slide">
-			<h3>What is Web Design?</h3>
+			<h3>CSS in Depth</h3>
 		</li>
 		<li class="slide">
-			<h3>User Expectations</h3>
-		</li>
-		<li class="slide">
-			<h3>Information Architecture</h3>
-		</li>
-		<li class="slide">
-			<h3>User Stories</h3>
-		</li>
-		<li class="slide">
-			<h3>Wireframing</h3>
+			<h3>CSS Styling Basics</h3>
 		</li>
 		<li class="slide">
 			<h3>Exercises</h3>
 		</li>
 	</ol>
-</article>
-
-<article class="slide slide-image">
-	<img src='images/dogsvscat.png'/>
 </article>
 
 <article class="slide slide-list">
@@ -131,7 +172,7 @@ function shuffleHomework(amt) {
 	<h3>Also Controls the layout of your page (where stuff is positioned)</h3>
 </li>
 <li class="slide">
-	<h3>Can have different styles different media formats (eg. print, screen, mobile)</h3>
+	<h3>Can have different styles for different media formats (eg. print, screen, mobile)</h3>
 </li>
 </ul>
 </article>
@@ -141,6 +182,28 @@ function shuffleHomework(amt) {
 <img src='images/css.png'/>
 </article>
 
+
+<article class="slide slide-list">
+<h2>Available selectors</h2>
+<ul>
+	 <li class='slide'>
+		 <h3>name of element (e.g. <em>p, div, h1</em>)</h3>
+	</li>
+	<li class='slide'>
+		<h3>
+		class name preﬁxed with a period (.)<br/>
+		<em>HTML </em>&lt;div <span class="callout">class=‘my-class-name</span>’&gt;<span class="light"> This is my class name </span>&lt;/div&gt;<br/>
+		<em>CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><span class="callout">.my-class-name</span> {<span class="light"> font-size: 25px; </span>}
+	</h3>
+	</li>
+	<li class='slide'>
+		<h3>element id preﬁxed with a pound sign (#)<br/>
+			<em>HTML </em>&lt;div <span class="callout">id=‘my-id</span>’&gt;<span class="light"> This is my id</span>&lt;/div&gt;<br/>
+			<em>CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><span class="callout">#my-id</span> { <span class="light"> color: red;</span> }
+	</h3>
+</li>
+</ul>
+</article>
 
 <article class='slide slide-list'>
 <h2>Pay attention to your class and id names!</h2>
@@ -163,30 +226,6 @@ function shuffleHomework(amt) {
 </article>
 
 
-
-
-<article class="slide slide-list">
-<h2>Available selectors</h2>
-<ul>
-	 <li class='slide'>
-		 <h3> name of element (e.g. <em>p, div, h1</em>)</h3>
-	</li>
-	<li class='slide'>
-		<h3>
-		class name preﬁxed with a period (.)<br/>
-		<em>HTML </em>&lt;div <span class="callout">class=‘my-class-name</span>’&gt;<span class="light"> This is my class name </span>&lt;/div&gt;<br/>
-		<em>CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><span class="callout">.my-class-name</span> {<span class="light"> font-size: 25px; </span>}
-	</h3>
-	</li>
-	<li class='slide'>
-		<h3>element id preﬁxed with a pound sign (#)<br/>
-			<em>HTML </em>&lt;div <span class="callout">id=‘my-id</span>’&gt;<span class="light"> This is my id</span>&lt;/div&gt;<br/>
-			<em>CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><span class="callout">#my-id</span> { <span class="light"> color: red;</span> }
-	</h3>
-</li>
-</ul>
-</article>
-
 <article class='slide slide-list'>
 <h2>Selectors </h2>
 <textarea class='coder-editor coder-editor-split coder-editor-instant' data-coder-template="coderdeck-css-playground" data-language='html'>
@@ -195,7 +234,6 @@ function shuffleHomework(amt) {
 </style>
 </textarea>
 </article>
-
 
 <article class="slide slide-list">
 <h1>Selector combinations </h1>
@@ -240,7 +278,6 @@ function shuffleHomework(amt) {
 	</li>
 </ul>
 </article>
-
 <article class='slide slide-list'>
 <h2>Selector Combination Exercise</h2>
 <textarea class='coder-editor coder-editor-split coder-editor-instant' data-coder-template="coderdeck-plain" id='coderdeck-default'>
@@ -266,14 +303,15 @@ function shuffleHomework(amt) {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
   </article>
-
 </section>
 <footer>
   <a href='#'>Link 1</a> | <a href='#'>Link 2</a>
 </footer>
 
 </textarea>
-</article> 
+</article>
+
+
 
 <article class="slide slide-list">
 <h1>Properties</h1>
@@ -316,9 +354,7 @@ function shuffleHomework(amt) {
 	<h3>“inherit” is a special property to force inheritence</h3>
 </li>
 </ul>
-</article>
-
-
+</article> 
 
 
 <article class="slide slide-list">
@@ -364,109 +400,6 @@ p {
 </article> 
 
 <article class="slide slide-list">
-<h1>Layout Properties</h1>
-<ul>
-<li class="slide">
-	<h3>Box model: margin, padding, width, height</h3>
-</li>
-<li class="slide">
-	<h3>top, bottom, left, right</h3>
-</li>
-<li class="slide">
-	<h3>border</h3>
-</li>
-<li class="slide">
-	<h3>position [ static, relative, absolute ]</h3>
-</li>
-<li class="slide">
-	<h3>ﬂoat [ left, right, none ], clear [ left, right, both]</h3>
-</li>
-<li class="slide">
-	<h3>display [none, block, inline inline-block]</h3>
-</li>
-<li class="slide">
-	<h3>visibility [visible, hidden]</h3>
-</li>
-<li class="slide">
-	<h3>background (color, image, repeat, position)</h3>
-</li>
-<li class="slide">
-	<h3>CSS3 (border-radius, box-shadow)</h3>
-</li>
-</ul>
-</article>
-
-<article class='slide slide-image'>
-<h1>Layout = Box Model</h2>
-<img src='images/layout.jpg'/>
-</article>
-
-<article class="slide slide-subhead">
-<h2><br/><br/>Understanding floats + Positioning</h2>
-	<p><a href='http://www.barelyfitz.com/screencast/html-training/css/positioning/'>http://www.barelyfitz.com/screencast/html-training/css/positioning/</a></p>
-</article>
-
-<article class="slide slide-list">
-<h1>Positioning 101</h1>
-	<ul>
-		<li class="slide">
-			<h3>Use “position:relative” to create an zone for absolutely positioning content</h3>
-		</li>
-		<li class="slide">
-			<h3>Use “position:absolute; top:...; left:....” to place something inside that zone.</h3>
-		</li>
-	</ul>
-</article>
-
-
-
-
-<article class='slide slide-image'>
-<h1>Exercise: we want this</h1>
-<img src='images/position-exercise.png'/>
-</article>
-
-
-<article class='slide slide-list'>
-<h2>Positioning Exercise</h2>
-<textarea class='coder-editor coder-editor-full' data-coder-template="coderdeck-plain" id='coderdeck-default'>
-<style>
-  #container { background-color:lightgray; margin:20px; height:300px; }
-
-
-</style>
-<div id='site'>
-Above Container
-<div id='container'>
-  <div id='top-left'>I'm in the top left!</div>
-  <div id='bottom-right'>I'm in the bottom right!</div>
-  <div class='blocks'>
-	  <div class='block'></div>
-	  <div class='block'></div>
-	  <div class='block'></div>
-	  <div class='block'></div>
-  </div>
-</div>
-Below Container
-</div>
-</textarea>
-</article> 
-
-
-<article class='slide slide-list'>
-<h2>Cascading - What Color?</h2>
-<textarea class='coder-editor coder-editor-full' data-coder-template="coderdeck-plain" id='coderdeck-default'>
-<style>
-  p { color:red;}
-  .blue { color:blue; }
-  #menu p { color:black; }
-</style>
-
-<div id="menu"><p class='blue'>This is the paragraph</p></div>
-</textarea>
-</article>
-
-<article class="slide slide-list">
 <h1>Cascading Hierarchy</h1>
 <ol>
 <li class="slide">
@@ -490,11 +423,26 @@ Below Container
 </ol>
 </article>
 
+
+<article class='slide slide-list'>
+<h2>Cascading - What Color?</h2>
+<textarea class='coder-editor coder-editor-full' data-coder-template="coderdeck-plain" id='coderdeck-default'>
+<style>
+  p { color:red;}
+  .blue { color:blue; }
+  #menu p { color:black; }
+</style>
+
+<div id="menu"><p class='blue'>This is the paragraph</p></div>
+</textarea>
+</article>
+
+
 <article class="slide slide-list">
 	<h1>Organizing Your CSS</h1>
 	<ol>
 		<li class='slide'>
-			<h3>Start with your reset (see next slide)</h3>
+			<h3>Start with your reset</h3>
 		</li>	
 		<li class="slide">
 			<h3>Set your body</h3>
@@ -514,66 +462,11 @@ Below Container
 	</ol>	
 </article>	
 
-<article class='slide slide-accent'>
-	<h1>Techniques</h1>
-</article>	
 
-<article class="slide slide-subhead">
-	<h1>Start with<br/> your reset</h1>
-	<p>Eric Meyer Reset<br/>
-		<a href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a>
-	</p>
-	<h2><a href="http://bit.ly/meyerreset">http://bit.ly/meyerreset</a>
-	</h2>	
-</article>
-
-<article class='slide slide-list'>
-	<h1>Centering Content</h1>
-	<h2>Give it a width and set margin: 0 auto;</h2>
-<pre>
-section#content {
-  margin:0 auto;
-  width:960px;
-}
-	</pre>
-</article>	
-
-<article class="slide slide-list">
-<h1>Nitty Gritty</h1>
-	<ul>
-		<li class="slide">
-			<h3>Using HTML5 tags - use a shiv<br/> <a href="http://code.google.com/p/html5shiv/">http://code.google.com/p/html5shiv/</a><br/>
-				(Or Modernizr, which we’ll discuss later)</h3>
-		</li>
-		<li class="slide">
-			<h3>Link to your stylesheet with a link tag in your &lt;head&gt;:<br/> 
-				<pre>&lt;link type=‘text/css’ rel=‘stylesheet’ href=‘style.css’ /&gt;</pre>
-			</h3>
-		</li>
-	</ul>
-</article>
-
-<article class='slide slide-list'>
-<h2>Logo Replacement</h2>
-<textarea class='coder-editor coder-editor-split' data-coder-template="coderdeck-plain" id='coderdeck-default'>
-&lt;style&gt;
-#site-header h1 a {
- display:block;  
- width:300px; 
- height:80px;  
- background:url(images/logo.png) no-repeat top left; 
- text-indent:-9999px;
- }
-</style>
-<header id='site-header'>
- <h1><a href='#'>My Awesome Website</a></h1>
-</header>
-</textarea>
-</article>
 
 <article class='slide slide-image'>
-<h1>Exercise: navbar</h1>
-<img src='images/menubar.png'/>
+<h1>Exercise: navbar</h1><br/>
+<p><img src='images/menubar.png'/></p>
 </article>
 
 
@@ -642,100 +535,35 @@ section#content {
 </script>
 </article>
 
-<article class="slide slide-list">
-<h1>Basic Chop 101</h1>
-	<ul>
-		<li class="slide">
-			<h3>Relatively positioned header</h3>
-		</li>
-		<li class="slide">
-			<h3>Absolutely positioned top nav</h3>
-		</li>
-		<li class="slide">
-			<h3>Image replacement logo</h3>
-		</li>
-		<li class="slide">
-			<h3>Floated menu items</h3>
-		</li>
-		<li class="slide">
-			<h3>Floated body</h3>
-		</li>
-		<li class="slide">
-			<h3>Relatively positioned footer</h3>
-		</li>	
-	</ul>
+<article class='slide slide-list'>
+<h2>Logo Replacement</h2>
+<textarea class='coder-editor coder-editor-split' data-coder-template="coderdeck-plain" id='coderdeck-default'>
+&lt;style&gt;
+#site-header h1 a {
+ display:block;  
+ width:300px; 
+ height:80px;  
+ background:url(images/logo.png) no-repeat top left; 
+ text-indent:-9999px;
+ }
+</style>
+<header id='site-header'>
+ <h1><a href='#'>My Awesome Website</a></h1>
+</header>
+</textarea>
 </article>
 
-<article class="slide slide-list">
-<h2>CSS Code</h2>
-	<pre>body { width:960px; margin:0 auto; }
-		
-header#site-header {
-  position:relative; height:80px;
-}
 
-#site-header h1 a { 
-  display:block;	
-  text-indent:-9999px;    
-  position:absolute;
-  width:300px; height:80px;
-  background:url(logo.png) no-repeat left top;
-}
-nav#top-nav { position:absolute; right:0px; top:0px; }
-
-nav#main-menu { height:30px; background-color:black; }
-nav#main-menu ul li { display:block; float:left; padding:0 5px; }
-nav#main-menu ul li a { display:block; color:white; padding:5px 5px; background-color:blue; }
-
-section#page-content { float:left; width:550px; padding:50px 20px; }
-aside#sidebar { float:right; width:220px; padding:50px 10px;; }
-
-footer#site-footer {     clear:both; background-color:black;     color:white; padding:10px 0px;  }</pre>
-</article>
 
 <article class='slide slide-list'>
-	<h1>In Class Exercise 1</h1>
-	<p>Default paragraphs to two paragraphs, with floated images<br/>
-		<h3><br/><img src="images/css-default.png" class='top-image'/><br/><br/></h3>
+	<h1>07-css-robots</h1>
+		<h3><br/><img src="images/evilgenius.png" class='top-image'/><br/><br/></h3>
 </article>
 
 
 <article class='slide slide-list'>
-	<h1>End Result</h1>
-		<h3><br/><img src="images/css-style.png" class='top-image'/><br/><br/></h3>
-</article>
-
-
-<article class="slide slide-list">
-<h1>Floats, Clears and Clearfix</h1>
-	<ul>
-		<li class="slide">
-			<h3>Put a background on your wrapper. What happens?</h3>
-		</li>
-		<li class="slide">
-			<h3>Have to clear your floats, or use a clearfix.</h3>
-		</li>
-		<li class="slide">
-			<h3>Will affect your content centering margin.</h3>
-		</li>
-	</ul>
-</article>
-
-
-<article class="slide slide-list">
-<h2>Clearfix</h2>
-	<pre>.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-	}
-
-.clearfix { display: inline-block; }
-  html[xmlns] .clearfix { display: block; }
-  * html .clearfix { height: 1%; }</pre>
+	<h1>06-css-cats-vs-dogs</h1>
+		<h3><br/><img src="images/dogsvscat.png" class='top-image'/><br/><br/></h3>
 </article>
 
 
@@ -745,11 +573,11 @@ footer#site-footer {     clear:both; background-color:black;     color:white
 <h2 class='slide'>Reading</h2>
 	<ul class='slide'>	
 		<li>
-            <h3><a href='http://www.alistapart.com/articles/css-floats-101/'>CSS Floats 101</a>
+            <h3><a href='http://coding.smashingmagazine.com/2009/10/05/mastering-css-coding-getting-started/'>Mastering CSS Coding: Getting Started</a>
 			</h3>
 		</li>
 		<li>
-            <h3><a href='http://www.alistapart.com/articles/css-positioning-101/'>CSS Positioning 101</a>
+            <h3><a href='http://coding.smashingmagazine.com/2008/05/02/improving-code-readability-with-css-styleguides/'>Improving Code Readability With CSS Styleguides</a>
 			</h3>
 		</li>
 	</ul>
@@ -757,10 +585,10 @@ footer#site-footer {     clear:both; background-color:black;     color:white
 	<h2 class='slide'>Coding</h2>
        <ul class='slide'>
 			<li>
-				<h3>Take your cats vs. dogs chop and style it (put it in your 04-class-css folder)</h3>
+				<h3>Finish cats vs. dogs by adding styling (add to your 06-cats-vs-dogs folder)</h3>				
 			</li>
 			<li>
-				<h3>Finish exercise #2 (robot styling in your GitHub folder)</h3>
+				<h3>Layout and Style -using only CSS the 07-css-robots assignment</h3>
 			</li>
 		</ul>
 </ul>	
