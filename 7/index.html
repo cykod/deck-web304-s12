@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Design 1 - Class 7</title>
+	<meta name="viewport" content="width=1024">
+	
+	
+    <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='dist/jquery.min.js'>SCRIPTEND
+	    </head>
+	    <body>
+		    CODE
+	    </body>
+	</html>
+	</script>
+
+	<script type='text/coderdeck' id='coderdeck-css-playground'>
+		<html>
+			<title>test</title>
+				CODE
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt;</p>
+				<div class='stuff'>&lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>&lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script>
+
+
+	<script type='text/coderdeck' id='coderdeck-plain'>
+		<html>
+			<title>test</title>
+			<link rel="stylesheet" href="reset.css">
+			<body>
+				CODE
+			</body>
+		</html>
+	</script>
+
+
+
+	<script type='text/coderdeck' id='coderdeck-style-example'>
+		<html>
+			<title>test</title>
+			<style>
+				CODE
+			</style>
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt; here</p>
+				<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script> 	
+	
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Responsive Design</h1>
+<h2>Week 7</h2>
+<p>CDGD304 - Spring 2012<br/>
+ <a href='http://cykod.github.com/deck-web304-s12/7/'>http://cykod.github.com/deck-web304-s12/7/</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+	<ol>
+		<li class="slide">
+			<h3>About Me &amp; Questions</h3>
+		</li>
+		<li class="slide">
+			<h3>Responsive Design</h3>
+		</li>
+		<li class="slide">
+			<h3>Flexible Grids</h3>
+		</li>
+		<li class="slide">
+			<h3>Flexible Images</h3>
+		</li>
+		<li class="slide">
+			<h3>Media Queries</h3>
+		</li>
+		<li class="slide">
+			<h3>Exercises</h3>
+		</li>
+	</ol>
+</article>
+
+<article class="slide slide-list">
+	<h2>Homework Review</h2>
+	<script>
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+function shuffleHomework(amt) {
+	if(amt <= 0) return;
+	$("#homework li").shuffle();
+	setTimeout(function() { shuffleHomework(amt - 1); },200);
+}
+
+	</script>
+	<a href='javascript:shuffleHomework(10);'>Shuffle</a>
+	<ul id='homework'>
+		<li><a href='http://lcamoroso.github.com/homework/index.html'>lcamoroso </a></li>
+		<li><a href='http://HilaryBraun.github.com/homework/index.html'>HilaryBraun</a></li>
+		<li><a href='http://adelenadent.github.com/homework/index.html'>adelenadent</a></li>
+		<li><a href='http://MadsG.github.com/homework/index.html'>MadsG</a></li>
+		<li><a href='http://erherskovitz.github.com/homework/index.html'>erherskovitz</a></li>
+		<li><a href='http://JuliDanielle.github.com/homework/index.html'>JuliDanielle</a></li>
+		<li><a href='http://ssuejkim.github.com/homework/index.html'>ssuejkim</a></li>
+		<li><a href='http://elknapp.github.com/homework/index.html'>elknapp</a></li>
+		<li><a href='http://linakong.github.com/homework/index.html'>linakong</a></li>
+		<li><a href='http://erikaleahey.github.com/homework/index.html'>erikaleahey</a></li>
+		<li><a href='http://zrmccarthy.github.com/homework/index.html'>zrmccarthy</a></li>
+		<li><a href='http://crpressman.github.com/homework/index.html'>crpressman</a></li>
+		<li><a href='http://MikeTavilla.github.com/homework/index.html'>MikeTavilla</a></li>
+	</ul>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Responsive Design</h1>
+<h2>What does that mean?</h2>
+</article>
+
+<article class='slide slide-statement'>
+<h1></h1>
+<p><em>(according to Ethan Marcotte)</em></p>
+<p>A flexible grid (with flexible images) that incorporates media queries to create a responsive, adaptive layout.</p>
+</article>
+
+<article class='slide slide-list'>
+<h2>Responsive design means:</h2>
+<ul>
+	<li class="slide">
+		<h3>Design for capabilities</h3>
+	</li>
+	<li class="slide">
+		<h3>Not individual browsers</h3>
+	</li>
+	<li class="slide">
+		<h3>Designing to screen size</h3>
+	</li>
+	<li class="slide">
+		<h3>not exact pixel dimensions</h3>
+	</li>
+	<li class="slide">
+		<h3>Designing for changing content</h3>
+	</li>
+	<li class="slide">
+		<h3>Hey, we should be doing that already!</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Also, it’s kinda hard.</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h1>Why it’s hard</h1>
+<ul>
+	<li class="slide">
+		<h3>More configurations to test</h3>
+	</li>
+	<li class="slide">
+		<h3>Need to handle different vertical sizes and relations.</h3>
+	</li>
+	<li class="slide">
+		<h3>Images and media need to resize.</h3>
+	</li>
+	<li class="slide">
+		<h3>Titles and Menus need multiple formats.</h3>
+	</li>
+	<li class="slide">
+		<h3>Must have buy-in from clients, designers, and developers</h3>
+	</li>
+	<li class="slide">
+		<h3>Relatively new, libraries and support still works-in-progress</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Why it’s awesome</h2>
+<ul>
+	<li class="slide">
+		<h3>Write once, display anywhere</h3>
+	</li>
+	<li class="slide">
+		<h3>Not designing for a static canvas, designing for responsiveness to content and the user.</h3>
+	</li>
+	<li class="slide">
+		<h3>Mobile support baked-in</h3>
+	</li>
+	<li class="slide">
+		<h3>True responsive design will display correctly on the iPad 23 in 2025.</h3>
+	</li>
+	<li class="slide">
+		<h3>Works regardless of device, orientation or resolution.</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-accent'>
+<h1>So What is Responsive Design?</h1>
+</article>
+
+<article class='slide slide-statement'>
+	<h1>Flexible Grid<br/>
+	Flexible Images<br/>
+	Media Queries</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h2>How?</h2>
+<ul>
+	<li class="slide">
+		<h3>Percentages and EM's and not pixels</h3>
+	</li>
+	<li class="slide">
+		<h3>Float elements, no absolute positioning</h3>
+	</li>
+	<li class="slide">
+		<h3>Media queries</h3>
+	</li>
+	<li class="slide">
+		<h3>Fluid image widths</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-accent'>
+<h1>Are these Responsive Design?</h1>
+</article>
+
+<article class='slide slide-image'>
+		<img src='images/fluid.png'/>
+</article>
+
+<article class='slide slide-image'>
+		<img src='images/flexible.png'/>
+</article>
+
+
+<article class='slide slide-accent'>
+	<h1>Flexible Grids</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h2>Flexible/Fluid Grids</h2>
+<ul>
+	<li class="slide">
+		<h3>Size everything in ems or percentages</h3>
+	</li>
+	<li class="slide">
+		<h3>Fluid percentages for width</h3>
+	</li>
+	<li class="slide">
+		<h3>Height needs to be set to auto.</h3>
+	</li>
+	<li class="slide">
+		<h3>Golden Formula: target ÷ context = result</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Maintaining Layouts</h2>
+<ul>
+	<li class="slide">
+		<h3>If you have to set a width - try to only do it on the container - use percentages inside</h3>
+	</li>
+	<li class="slide">
+		<h3>a max-width of 100% will make sure your page doesn’t break out of the viewpoint</h3>
+	</li>
+	<li class="slide">
+		<h3>don’t use height in px for anything with text inside</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Bryan Rieger, “Rethinking the Mobile Web”</h2>
+<ul>
+	<li class="slide">
+		<h3>Mobile first</h3>
+	</li>
+	<li class="slide">
+		<h3>Use well structured, meaningful markup</h3>
+	</li>
+	<li class="slide">
+		<h3>the absence of support for @media queries is in fact the first @media query...</h3>
+	</li>
+	<li class="slide">
+		<h3>Progressively enhance using JavaScript and @media queries</h3>
+	</li>
+	<li class="slide">
+		<h3>Adapt content (especially images) appropriately for each device</h3>
+	</li>
+	<li class="slide">
+		<h3>Compress content where possible and don’t include unnecessary data</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Containers </h2>
+<textarea class='coder-editor coder-editor-full' data-save='reponsive-content'>
+<style>
+  #wrapper { width:800px; }
+  #content { float:left; width:550px; margin-left:20px; }
+  #sidebar { float:right; width:200px; margin-right:20px; }
+</style>
+<section id='wrapper'>
+  <section id='content'>
+    Content
+  </section>
+  <section id='sidebar'>
+    Sidebar
+
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:red; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Responsive Containers </h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; }
+  #content { float:left; width:63%; margin-left:1%; }
+  #sidebar { float:right; width:33%; margin-right:1%; }
+</style>
+<section id='wrapper'>
+  <section id='content'>
+    Content
+  </section>
+  <section id='sidebar'>
+    Sidebar
+
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:red; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Responsive Containers Max Width</h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:700px; }
+  #content { float:left; width:63%; margin-left:1%; }
+  #sidebar { float:right; width:33%; margin-right:1%; }
+</style>
+<section id='wrapper'>
+  <section id='content'>
+    Content
+  </section>
+  <section id='sidebar'>
+    Sidebar
+
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:red; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Flexible Images</h1>
+</article>	
+
+<article class='slide slide-statement'>
+	<h1>should be as easy as<br/> img { max-width:100% }</h1>
+</article>	
+
+<article class='slide slide-list'>
+<h2>Make this image flexible</h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { width:80%; margin:0 auto; padding:30px 0px; }
+</style>
+<div id='wrapper'>
+  <section id='content'>
+    <img src='http://placekitten.com/600/400'/>
+  </section>
+</div>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:lightgray; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Max-Width is our friend</h2>
+<p>Well, not ie6's friend - use a condition include and target width:100% instead</p>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { width:80%; margin:0 auto; padding:30px 0px; }
+  img { max-width:100%; }
+</style>
+<div id='wrapper'>
+  <section id='content'>
+    <img src='http://placekitten.com/600/400'/>
+  </section>
+</div>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:lightgray; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+<article class="slide slide-statement">
+	<h1>Sizing text and setting in em's</h1>
+</article>
+
+<article class='slide slide-list'>
+<h1>Treat Fonts as Proportions Not Pixels</h1>
+<p>16px is the normal 100% default (from our reset)</p>
+<p>the golden formula is target &divide; context = result</p>
+<p>context is our base size (in this case 16px)</p>
+<p>target is what we set (the size of our header might be 24px)</p>
+</article>
+
+<article class="slide slide-accent">
+	<h1>24 &divide; 16 = 1.5</h1>
+</article>
+
+
+<article class='slide slide-list'>
+<h1>Reseting the font size</h1>
+<p>16px is the normal 100% default (from our reset)</p>
+<textarea class='coder-editor coder-editor-full'>
+<h1>I'm a h1</h1>
+<p>I'm a P</p>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>adjusting in em's (target &divide; context = result)</h2>
+<textarea class='coder-editor coder-editor-full'>
+<style>
+  h1 { font-size:2em;  } /*  32px / 16px = 2  */
+</style>
+<h1>i'm a h1</h1>
+<p>i'm a p</p>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-accent'>
+	<h1>Media Queries</h1>
+</article>
+
+<article class='slide slide-list'>
+<h1>Media Types</h1>
+<ul>
+	<li class="slide">
+		<h3>@media <span class="callout">screen</span>{...}</h3>
+	</li>
+	<li class="slide">
+		<h3>@media <span class="callout">print</span>{...}</h3>
+	</li>	
+	<li class="slide">
+			<h3>@media <span class="callout">handheld</span>{...}</h3>
+	</li>
+</ul>
+<h3 class="slide">ex.<br/> @media <span class="callout">screen</span> and (min-width:600px) and (max-width:1200px)</h3>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Enter Media Queries</h2>
+<ul>
+	<li class="slide">
+		<h3>Can be used inline in stylesheets:</h3>
+<pre class='prettyprint'>
+@media screen and (max-width:500px) { ... }
+</pre>
+	</li>
+	<li class="slide">
+		<h3>Can be used as separate stylesheets:</h3>
+<pre>
+&lt;link rel="stylesheet" media="screen and (max-width:500px)" href="example.css" /&gt;
+</pre>
+	</li>
+	<li class="slide">
+		<h3>Can be used with @import (discouraged)</h3>
+<pre class='prettyprint'>
+@import url(example.css) screen and (max-width:500px);
+</pre>
+	</li>
+</ul>
+
+</article>
+
+<article class='slide slide-list'>
+<h2>Responsive Containers Stack</h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { float:left; width:63%; margin-left:1%; }
+  #sidebar { float:right; width:33%; margin-right:1%; }
+
+  @media screen and (max-width:600px) {
+    #content { float:none; width:98%; margin:0 1%; }
+    #sidebar { float:none; width:98%; margin:0 1%; }
+  }
+</style>
+<section id='wrapper'>
+  <section id='content'>
+    Content
+  </section>
+  <section id='sidebar'>
+    Sidebar
+
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:red; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>What about adjusting our text sizes?</h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { float:left; width:63%; margin-left:1%; }
+  #sidebar { float:right; width:33%; margin-right:1%; }
+
+  h1 { font-size:4em; }
+  h2 { font-size:3em; }
+  img { max-width:100%; }
+
+  @media screen and (max-width:600px) {
+    body { font-size:0.5em; }
+    p { font-size:1.8em; }
+    #content { float:none; width:98%; margin:0 1%; }
+    #sidebar { float:none; width:98%; margin:0 1%; }
+  }
+</style>
+<section id='wrapper'>
+  <h1>This is the title</h2>
+  <section id='content'>
+    <h2>Content Title</h2>
+    <img src='http://placekitten.com/600/400'/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in mauris sit amet metus aliquet consequat. Vestibulum rhoncus semper nunc nec rhoncus. Suspendisse in mi et lorem tincidunt pharetra nec ac leo. Curabitur at neque consectetur ligula condimentum porta sed et turpis. Sed condimentum diam id tellus fermentum dapibus lacinia lorem pharetra. Donec id sem ut dui egestas tincidunt ac condimentum ante. Nullam egestas euismod fermentum. Fusce eget magna turpis. Maecenas porttitor lacus eget nibh faucibus venenatis. Suspendisse ultrices ligula vel felis vulputate ut pellentesque nunc ullamcorper.</p>
+  </section>
+  <section id='sidebar'>
+  <h2>Content Title</h2>
+  <p> Suspendisse pellentesque pretium enim, in porttitor dui condimentum ac. Mauris viverra laoreet lacus et tempor. Curabitur sit amet libero arcu, nec rutrum dolor. In hac habitasse platea dictumst. Nam sagittis felis nec quam luctus commodo. Cras pharetra volutpat tortor, sed hendrerit sem accumsan at. Vivamus id justo nec orci consectetur porttitor vel vitae metus. Aliquam erat volutpat. Aliquam erat volutpat. Nam enim nisl, ultrices eget porttitor in, iaculis a sapien. Nullam lacinia blandit neque, vitae faucibus est euismod ac. Quisque fermentum mattis aliquet. Quisque viverra cursus rutrum. Sed bibendum, urna at accumsan interdum, arcu velit semper urna, sed congue elit diam a felis. Suspendisse potenti.</p>
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:lightgray; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Floating Elements</h2>
+<textarea class='coder-editor coder-editor-full' >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { float:left; width:98%; margin-left:1%; }
+
+  li { float:left; padding:20px } 
+
+  h1 { font-size:4em; }
+  h2 { font-size:3em; }
+  img { max-width:100%; }
+
+  @media screen and (max-width:600px) {
+
+    body { font-size:0.5em; }
+    p { font-size:1.8em; }
+    #content { float:none; width:98%; margin:0 1%; }
+  }
+</style>
+<section id='wrapper'>
+  <h1>This is the title</h2>
+  <section id='content'>
+   <ul>
+   	<li>
+		<img src="http://placekitten.com/200/100?2"/>
+   	</li>
+   	<li>
+		<img src="http://placekitten.com/200/100?3"/>
+   	</li>
+   	<li>
+		<img src="http://placekitten.com/200/100?4"/>
+   	</li>
+   	<li>
+		<img src="http://placekitten.com/200/100?5"/>
+   	</li>
+   	<li>
+		<img src="http://placekitten.com/200/100?6"/>
+   	</li>
+   </ul>
+  <div style='clear:both;'></div>
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:lightgray; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Other stuff we can do</h2>
+<ul>
+	<li class="slide">
+		<h3>Hiding stuff with display:none</h3>
+	</li>
+	<li class="slide">
+		<h3>Making stuff appear with display:block</h3>
+	</li>
+	<li class="slide">
+		<h3>Creating a separate print stylesheet with "@media print"</h3>
+	</li>
+	<li class="slide">
+          <h3>Adjust based on device orientation</h3>
+	</li>
+	<li class="slide">
+          <h3><a href='https://developer.mozilla.org/en/CSS/Media_queries'>Lots of Media Query options</a></h3>
+	</li>
+</ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>"Breakpoints"</h1>
+<h2>When does your design break? How can you adjust your page to respond?</h2>
+</article>
+
+<article class='slide slide-list'>
+<h2>Exercises</h2>
+<p><em>#1:</em> Fix the image, <em>#2:</em> Style the titles larger, <em>#3:</em> Add another break point at 400px, <em>#4:</em> Adjust the title and body font size for each breakpoint, <em>#5:</em> Hide the sidebar under 400px, <em>#6:</em> Show the content block #mobile-nav under 400px; </p>
+<textarea class='coder-editor coder-editor-full' data-save="responsive-exercise-final" >
+<style>
+  #wrapper { width:100%; margin:0 auto; max-width:1024px; }
+  #content { float:left; width:63%; margin-left:1%; }
+  #sidebar { float:right; width:33%; margin-right:1%; }
+  #mobile-nav { display:none; }
+
+  @media screen and (max-width:600px) {
+    #content { float:none; width:98%; margin:0 1%; }
+    #sidebar { float:none; width:98%; margin:0 1%; }
+  }
+</style>
+
+<section id='wrapper'>
+  <h1>This is the title</h2>
+  <section id='mobile-nav'>This is mobile navigation</section>
+  <section id='content'>
+    <h2>Content Title</h2>
+    <img src='http://placekitten.com/600/400'/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in mauris sit amet metus aliquet consequat. Vestibulum rhoncus semper nunc nec rhoncus. Suspendisse in mi et lorem tincidunt pharetra nec ac leo. Curabitur at neque consectetur ligula condimentum porta sed et turpis. Sed condimentum diam id tellus fermentum dapibus lacinia lorem pharetra. Donec id sem ut dui egestas tincidunt ac condimentum ante. Nullam egestas euismod fermentum. Fusce eget magna turpis. Maecenas porttitor lacus eget nibh faucibus venenatis. Suspendisse ultrices ligula vel felis vulputate ut pellentesque nunc ullamcorper.</p>
+  </section>
+  <section id='sidebar'>
+  <h2>Content Title</h2>
+  <p> Suspendisse pellentesque pretium enim, in porttitor dui condimentum ac. Mauris viverra laoreet lacus et tempor. Curabitur sit amet libero arcu, nec rutrum dolor. In hac habitasse platea dictumst. Nam sagittis felis nec quam luctus commodo. Cras pharetra volutpat tortor, sed hendrerit sem accumsan at. Vivamus id justo nec orci consectetur porttitor vel vitae metus. Aliquam erat volutpat. Aliquam erat volutpat. Nam enim nisl, ultrices eget porttitor in, iaculis a sapien. Nullam lacinia blandit neque, vitae faucibus est euismod ac. Quisque fermentum mattis aliquet. Quisque viverra cursus rutrum. Sed bibendum, urna at accumsan interdum, arcu velit semper urna, sed congue elit diam a felis. Suspendisse potenti.</p>
+  </section>
+  <div style='clear:both;'></div>
+</section>
+
+<style>
+  /* Dummy Styles */
+  #wrapper { background-color:red; padding:20px 0px; }
+  #content { background-color:black; color:white; min-height:300px; }
+  #sidebar { background-color:darkgray; color:white; min-height:300px; }
+</style>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-subhead'>
+<h1>Setting the <a href='https://developer.mozilla.org/en/Mobile/Viewport_meta_tag'>Viewport</a></h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>What about other features?</h2>
+<ul>
+	<li class="slide">
+		<h3>Enter Modernizr</h3>
+	</li>
+	<li class="slide">
+		<h3>Works with CSS classes on the body</h3>
+	</li>
+	<li class="slide">
+		<h3>Mostly used for Javascript detection</h3>
+	</li>
+	<li class="slide">
+		<h3>But can also test media queries directly</h3>
+<pre class='prettyprint'>
+Modernizr.mq('only screen and (max-width: 768px)')  // true
+</pre>
+	</li>
+</ul>
+
+</article>
+
+<article class='slide slide-list'>
+<h2>Examples</h2>
+<ul>
+	<li>
+          <a href="http://BostonGlobe.com">BostonGlobe.com</a> (<a href='http://slides.upstatement.com/boston-globe/'>Upstatement Presentation</a>)</li>
+	<li>
+		<a href="http://teegallery.com/">http://teegallery.com/</a></li>
+	<li>
+		<a href="http://www.html5gamedevelopment.org/">http://www.html5gamedevelopment.org/</a></li>
+</ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Where to use?</h1>
+<h2>Discussion..</h2>
+</article>
+
+
+<article class='slide slide-homework'>
+<h2>Homework</h2>
+	<h3 class='slide'>Reading</h3>
+	<ul class='slide'>	
+			<li>
+                <h3><a href='http://www.alistapart.com/articles/responsive-web-design/'>Responsive Web Design</a>
+				</h3>
+			</li>
+			<li>
+	            <h3><a href='http://www.alistapart.com/articles/fluid-images/'>Fluid Images</a>
+				</h3>			
+			</li>
+			</ul>
+	
+	<h3 class='slide'>Design</h3>
+       <ul class='slide'>
+			<li>
+                <h3>Take your cat vs dog design and make it responsive.
+ 			    </h3>
+			</li>
+			<li>
+	           <h3>Write and Validate the HTML for Homepage and 1 interior page of your final project 
+	 		   </h3>
+			</li>
+		</ul>
+</ul>	
+</article>
+
+<script src='dist/coderdeck.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
