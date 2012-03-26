@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Design 1 - Class 8</title>
+	<meta name="viewport" content="width=1024">
+	
+	
+    <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='dist/jquery.min.js'>SCRIPTEND
+	    </head>
+	    <body>
+		    CODE
+	    </body>
+	</html>
+	</script>
+
+	<script type='text/coderdeck' id='coderdeck-css-playground'>
+		<html>
+			<title>test</title>
+				CODE
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt;</p>
+				<div class='stuff'>&lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>&lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script>
+
+
+	<script type='text/coderdeck' id='coderdeck-plain'>
+		<html>
+			<title>test</title>
+			<link rel="stylesheet" href="reset.css">
+			<body>
+				CODE
+			</body>
+		</html>
+	</script>
+
+
+
+	<script type='text/coderdeck' id='coderdeck-style-example'>
+		<html>
+			<title>test</title>
+			<style>
+				CODE
+			</style>
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt; here</p>
+				<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script> 	
+	
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Typography &amp; the Web</h1>
+<h2>Week 8</h2>
+<p>CDGD304 - Spring 2012<br/>
+ <a href='http://bit.ly/deck-web304-s12/8'>http://bit.ly/deck-web304-s12/8</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+	<ol>
+		<li class="slide">
+			<h3>Review Homework</h3>
+		</li>
+		<li class="slide">
+			<h3>History of Type on the Web</h3>
+		</li>
+		<li class="slide">
+			<h3>CSS3 &amp; @font-face</h3>
+		</li>
+		<li class="slide">
+			<h3>Licensing vs Free</h3>
+		</li>
+		<li class="slide">
+			<h3>Choosing Fonts</h3>
+		</li>
+		<li class="slide">
+			<h3>Combining Fonts</h3>
+		</li>
+		<li class="slide">
+			<h3>Typography</h3>
+		</li>
+		<li class="slide">
+			<h3>Tips & Tricks</h3>
+		</li>
+		<li class="slide">
+			<h3>Trends</h3>
+		</li>
+	</ol>
+</article>
+
+
+<article class="slide slide-list">
+	<h2>Homework Review</h2>
+	<script>
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+function shuffleHomework(amt) {
+	if(amt <= 0) return;
+	$("#homework li").shuffle();
+	setTimeout(function() { shuffleHomework(amt - 1); },200);
+}
+
+	</script>
+	<a href='javascript:shuffleHomework(10);'>Shuffle</a>
+	<ul id='homework'>
+		<li><a href='http://lcamoroso.github.com/homework/index.html'>lcamoroso </a></li>
+		<li><a href='http://HilaryBraun.github.com/homework/index.html'>HilaryBraun</a></li>
+		<li><a href='http://adelenadent.github.com/homework/index.html'>adelenadent</a></li>
+		<li><a href='http://MadsG.github.com/homework/index.html'>MadsG</a></li>
+		<li><a href='http://erherskovitz.github.com/homework/index.html'>erherskovitz</a></li>
+		<li><a href='http://JuliDanielle.github.com/homework/index.html'>JuliDanielle</a></li>
+		<li><a href='http://ssuejkim.github.com/homework/index.html'>ssuejkim</a></li>
+		<li><a href='http://elknapp.github.com/homework/index.html'>elknapp</a></li>
+		<li><a href='http://linakong.github.com/homework/index.html'>linakong</a></li>
+		<li><a href='http://erikaleahey.github.com/homework/index.html'>erikaleahey</a></li>
+		<li><a href='http://zrmccarthy.github.com/homework/index.html'>zrmccarthy</a></li>
+		<li><a href='http://crpressman.github.com/homework/index.html'>crpressman</a></li>
+		<li><a href='http://MikeTavilla.github.com/homework/index.html'>MikeTavilla</a></li>
+	</ul>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>History of Type on the Web</h1>
+</article>
+
+<article class="slide slide-list">
+<h1>In the past you were limited too...</h1>
+	<ul>
+	<li class="slide">
+		<h3>Web-safe fonts (working with the same 5 fonts)</h3>
+		<ul>
+			<li class="slide">
+				<h3>Arial</h3>
+			</li>
+			<li class="slide">
+				<h3>Georgia</h3>
+			</li>
+			<li class="slide">
+				<h3>Verdana</h3>
+			</li>
+			<li class="slide">
+				<h3>Times</h3>
+			</li>
+			<li class="slide">
+				<h3>Trebuchet</h3>
+			</li>
+		</ul>
+	</li>				
+	<li class="slide">
+		<h3>Image Replacement, sIFR, Cufon,...</h3>
+		<ul>
+			<li class="slide">
+				<h3>accessibility issues</h3>
+			</li>
+			<li class="slide">
+				<h3>a pain to maintain</h3>
+			</li>
+			<li class="slide">
+				<h3>flash of content</h3>
+			</li>
+			<li class="slide">
+				<h3>dependent on Javacript or Flash</h3>
+			</li>
+			<li class="slide">
+				<h3>Way more painful to implement</h3>
+			</li>
+	</li>	
+	</ul>
+</article>
+
+<article class="slide slide-subhead">
+	<h1>Today we have</h1>
+	<h2>CSS3 &amp; @font-face</h2>
+	<pre>	@font-face {
+	  src: url(Beautiful-ES.ttf);
+	  font-family: "Beautiful";
+	}</pre>
+</article>
+
+
+<article class='slide slide-list'>
+	<h1>Pros</h1>
+		<li class="slide">
+			<h3>We have more fonts to use!.</h3>
+		</li>
+		<li class="slide">
+			<h3>Dynamic, selectable, printable, and easily edited text</h3>
+		</li>
+		<li class="slide">
+			<h3>Easy to implement</h3>
+		</li>
+		<li class="slide">
+			<h3>Smaller and faster loading pages than images</h3>
+		</li>
+</article>
+
+
+<article class='slide slide-list'>
+	<h1>Cons</h1>
+		<li class="slide">
+			<h3>Easy to overuse. Lots of funs fonts don’t make good designs, good designers make good designs</h3>
+		</li>
+		<li class="slide">
+			<h3>Licensing - if it’s not open sourced and you don’t have a license - don’t use it</h3>
+		</li>
+		<li class="slide">
+			<h3>FOUT (flash of unstyled text)</h3>
+		</li>
+		<li class="slide">
+			<h3>Rendering differences  (pixel perfection should be a thing of the past)</h3>
+		</li>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Getting your fonts into your site</h1>
+</article>	
+
+<article class='slide slide-subhead'>
+	<h2><br/>Browser Support<br/><br/></h2>
+	<img src='images/browsers.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h1>@font-face</h1>
+		<li class="slide">
+			<h3>Adds “font-family” fonts you can use with CSS</h3>
+		</li>
+		<li class="slide">
+			<h3>Currently you need to provide 4 different versions of the same font to cover all browsers</h3>
+		</li>
+		<li class="slide">
+			<h3>Don’t worry about the specifics use a generator like fontsquirrel.com or use a hosting service</h3>
+		</li>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Raw Code</h2>
+		<pre>@font-face {
+	font-family: "Your typeface";
+	src: url("type/filename.eot");
+	src: local("☺"),
+		url("type/filename.woff") format("woff"),
+		url("type/filename.otf") format("opentype"),
+		url("type/filename.svg#filename") format("svg");
+}
+@font-face {
+	font-family: "Your italic typeface";
+	src: url("type/filename-ital.eot");
+	src: local("☺"),
+		url("type/filename-ital.woff") format("woff"),
+		url("type/filename-ital.otf") format("opentype"),
+		url("type/filename-ital.svg#filename-ital") format("svg");
+}</pre>
+	<p><em>Don’t write this - cut and paste from your generator</em></p>
+</article>
+
+
+<article class='slide slide-list'>
+	<h2>Link Code</h2>
+		<pre>&lt;link href='http://fonts.googleapis.com/css?family=FontName&v2' rel='stylesheet' type='text/css'&gt;</pre>
+	<p><em>Example from Google Fonts</em></p>
+</article>
+
+
+
+<article class='slide slide-list'>
+	<h2>Your CSS</h2>
+		<pre>h2 { font-family: "Your typeface", Georgia, serif; }</pre>
+	<p><em>Style as Usual</em></p>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Exercise 1: Load Some Google Fonts</h2>
+<p>Load a different font for your H1, and your P from <a href='http://www.google.com/webfonts'>Google Fonts</a></p>
+<textarea class='coder-editor coder-editor-full' data-coder-template="coderdeck-plain" data-language='html'>
+
+<html>
+<head>
+
+
+</head>
+<body>
+
+<section id='content'>
+  <article class='blog-post'>
+    <h1>Blog Post 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+  </article>
+  <article class='blog-post'>
+    <h1>Blog Post 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac elit at nisl sagittis consequat sed eget tellus. Aliquam gravida, nunc sit amet viverra dictum, nibh justo semper massa</p>
+  </article>
+
+</section>
+
+</body>
+</html>
+</textarea>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Where do you find fonts?</h1>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Hosted Platforms</h2>
+</article>
+
+<article  style='background-image:url(images/typkit.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://typekit.com/">Typekit</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/fontdeck.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://fontdeck.com/">FontDeck</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/fontscom.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.fonts.com/">Fonts.com</a></h1>
+</div></div>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Buying a License</h2>
+</article>
+
+<article  style='background-image:url(images/myfonts.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://new.myfonts.com/">MyFonts</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/kernest.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://kernest.com/">Kernest</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/fontspring.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.fontspring.com/">FontSpring</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/webtype.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.webtype.com/">Webtype</a></h1>
+</div></div>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Free Fonts</h2>
+</article>
+
+<article  style='background-image:url(images/googlefont.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.google.com/webfonts#ChoosePlace:select">Google Web Fonts</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/fontsquirrel.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.fontsquirrel.com/">Font Squirrel</a></h1>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/leaguetype.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<h1><a href="http://www.theleagueofmoveabletype.com/">The League of Moveable Type</a></h1>
+</div></div>
+</article>
+
+<article class='slide slide-list'>
+	<h1>Free Problems</h1>
+		<li class="slide">
+			<h3>Quality not guaranteed</h3>
+		</li>
+		<li class="slide">
+			<h3>Unknown rendering (hinting)</h3>
+		</li>
+		<li class="slide">
+			<h3>Poorly drawn</h3>
+		</li>
+		<li class="slide">
+			<h3>Poorly kerned</h3>
+		</li>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/>Complete Sets<br/></h2>
+	<img src='images/free-font.png'/>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/>Font Hinting<br/></h2>
+	<img src='images/hinting.png'/>
+	<a href="http://en.wikipedia.org/wiki/Font_hinting">via Wikipedia</a>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/>Kerning<br/></h2>
+	<img src='images/kerning.png'/>
+</article>
+
+
+<article class='slide slide-list'>
+	<h1>Licensing</h1>
+		<li class="slide">
+			<h3>Make sure you own the license</h3>
+		</li>
+		<li class="slide">
+			<h3>Read the EULA</h3>
+		</li>
+		<li class="slide">
+			<h3>Desktop licenses are not the same as web</h3>
+		</li>
+		<li class="slide">
+			<h3>Avoid liability issues</h3>
+		</li>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>How to choose fonts</h1>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Know your audience and platform</h2>
+</article>
+
+<article class='slide slide-list'>
+	<h2><br/>Large x-height & counters for body text<br/></h2>
+	<p>the larger the bowls on letters like “b” and “h” the easier your text will be to read on a screen, especially at small sizes.</p>	
+	<img src='images/counters.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h2><br/>Check your 1, I, and l<br/></h2>
+	<p>the number one, capital “i”, and lowercase “L” should be distinct.</p>	
+	<img src='images/ls.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h2><br/>Readability<br/></h2>
+	<p>At small sizes fonts with larger variation in weights will be harder to read.</p>	
+	<img src='images/readability.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h2><br/>Headline vs Text<br/></h2>	
+	<img src='images/headline.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h2><br/>Appropriate<br/></h2>
+	<p>Always honor your content and audience first. Choose fonts that are relevant to your subject before choosing what’s new and trendy.</p>	
+	<img src='images/lobster.png'/>
+</article>
+
+<article style='background-image:url(images/nytimes.png);' class='slide slide-background'>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Combining Fonts</h1>
+</article>
+
+
+<article class='slide slide-list'>
+	<h1>Combining Fonts</h1>
+		<li class="slide">
+			<h3>KISS (Keep It Simple Stupid)</h3>
+		</li>
+		<li class="slide">
+			<h3>Don't over complicate: limit yourself to 2 Styles</h3>
+		</li>
+		<li class="slide">
+			<h3>San Serif + Serif always works</h3>
+		</li>
+		<li class="slide">
+			<h3>avoid similar styles/classifications</h3>
+		</li>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Go for contrast</h2>
+</article>
+
+<article class='slide slide-list'>
+	<h2>The Golden Ratio:<br/> Heading to Body font size</h2>
+	<p>Heading font size ÷ Body copy font size = 1.96<br/><br/>What this really means is that if you double your body size you will almost always have enough contrast in weight from the heading.</p>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Though the current trend is big headlines...</h2>
+</article>
+
+<article  style='background-image:url(images/monsters.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://designingmonsters.com/">designingmonsters.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/giant.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://solidgiant.com/">solidgiant.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/fittext.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://fittextjs.com/">fittextjs.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/brandconf.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://underconsideration.com/brandnewconference/">underconsideration.com/brandnewconference</a></p>
+</div></div>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Limiting yourself to one font can work beautifully as well.</h2>
+</article>
+
+<article  style='background-image:url(images/seedconf.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://seedconference.com/">seedconference.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/helvetica.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://www.lovehelvetica.com/">lovehelvetica.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/legistyles.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://legistyles.com/">legistyles.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/needtype.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://julianhansen.com/files/infographiclarge_v2.png">So You Need A Typeface by Julian Hansen</a></p>
+</div></div>
+</article>
+
+<article class='slide slide-accent'>
+	<h1>Why you Should Care about Typography on the Web</h1>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/>Typography is not picking a "cool" font -Jeff Croft</h2>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/>Good typography is the easiest way to quickly make your site look good.<br/><br/>
+But most importantly, it will make your site easier to read and navigate for users.</h2>
+</article>
+
+<article class='slide slide-list'>
+	<h1>Hierarchy</h1>
+		<li class="slide">
+			<h3>Decide what is most important and NOT everything can be important.</h3>
+		</li>
+		<li class="slide">
+			<h3>Make more important things are bigger.</h3>
+		</li>
+		<li class="slide">
+			<h3>Make less important smaller.</h3>
+		</li>
+		<li class="slide">
+			<h3>Add emphasis with color, weight and style.</h3>
+		</li>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2><br/><br/><br/>You need to decide what’s important</h2>
+</article>
+
+<article  style='background-image:url(images/yvettes.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://yvettesbridalformal.com/">yvettesbridalformal.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/cmornings.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://www.creativemornings.com/">creativemornings.com</a></p>
+</div></div>
+</article>
+
+<article class='slide slide-subhead'>
+	<img src='images/cmorning-close.png'/>
+	<p>big headline, med body, small detail, red box for emphasis, red type for emphasis</p>
+</article>
+
+<article class='slide slide-list'>
+	<h2>emphasis</h2>
+	<p>Giving emphasis to a word without interrupting the reader is important. Italic is widely considered to be the ideal form of emphasis. Some other common forms of emphasis are: bold, caps, small caps, type size, color, underline or a different typeface. No matter which you choose, try to limit yourself to using only one. Combinations such as caps-bold-italic are disruptive and look clumsy.</p>
+</article>
+
+<article class='slide slide-subhead'>
+	<img src='images/emphasis.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h1>Space</h1>
+		<li class="slide">
+			<h3>Keep line length readable, not too long or short.</h3>
+		</li>
+		<li class="slide">
+			<h3>Adjust the line-height to give more</h3>
+		</li>
+		<li class="slide">
+			<h3>White space</h3>
+		</li>
+</article>
+
+<article class='slide slide-list'>
+	<h2>How Many Characters Per Line?</h2>
+	<h3>According to Robert Bringhurst, who wrote my typography bible, 45 to 75.<br/>
+	Recent web studies show that 66 might be the “web ideal”</h3>	
+</article>	
+
+<article class='slide slide-list'>
+	<h2>Line Height</h2>
+	<img src='images/line-height.png'/>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Letter Spacing</h2>
+	<img src='images/letter-spacing.png'/>
+</article>
+
+
+<article class='slide slide-list'>
+	<h2>embrace white space</h2>
+	<h3>Not every pixel needs to be covered in text or graphics.<br/><br/>
+	White space doesn’t have to be white, it can be red, green, black, or patterned. It’s simply space that is left vacant.<br/><br/>
+	 The vacant space makes it easier for the reader to navigate through the content of your site.<br/></h3>	
+</article>
+
+
+<article class='slide slide-accent'>
+	<h1>Be a type rockstar</h1>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Read</h2>
+	<img src='images/read.png'/>
+</article>
+
+
+<article class='slide slide-list'>
+	<h2>- hyphen</h2>
+	<h3>used to separate the words in a compound adjective, verb, or adverb.</h3><br/>
+	<h3><em>The friendly-looking man in the front is waiting for a much-needed break.</em></h3>
+</article>
+
+<article class='slide slide-list'>
+	<h2>&#8211; the en dash</h2>
+	<h3>used to express a range of values or a distance</h3><br/>
+	<h3><em>The Red Sox beat the Yankees 4&#8211;0.</em></h3>
+</article>
+
+<article class='slide slide-list'>
+	<h2>&#8212; the em dash</h2>
+	<h3>used to indicate a break in though</h3><br/>
+	<h3><em>The pizza&#8212;with warm cheese and spicy pepperoni&#8212;was delicious.</em></h3>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Be Smart not Dumb</h2>
+	<h3 class="big"><em>'dumb double quotes'<br/>
+		&#8220;smart double quotes&#8221;</em>
+	</h3>
+	<p>&amp;#8220 = opening double quotes
+	&amp;#8221 = closing double quotes</p><br/><br/>
+	
+	<h3 class="big"><em>'dumb single quotes'<br/>
+		&#8216;smart single quotes&#8217;</em>
+	</h3>
+	<p>&amp;#8216 = opening single quote
+	&amp;#8217 = closing single quote</p>
+</article>
+
+
+<article  class='slide slide-subhead'>
+<h1><a href="http://www.jimgodfreydesign.com/typeSins.pdf">Thirty-Four Typographic Sins by Jim Godfrey</a></h1>
+</article>
+
+
+<article  style='background-image:url(images/letteringjs.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://letteringjs.com/">letteringjs.com</a></p>
+</div></div>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Exercise 2: Lettering JS</h2>
+<p>Let's load in some google fonts and style the gettysburg address with lettering js</p>
+<textarea class='coder-editor coder-editor-full' data-template='full-page' data-language='html'>
+<html>
+<head>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/jquery.lettering.js'></script>
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+	   .word1 { font-size:50px; }
+	   .word1 .char2 {color:red; }
+
+    </style>
+</head>
+<body>
+  <p>Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.</p>
+
+<script>
+   $(document).ready(function() {
+    $("p").lettering("words");
+    $("p > span").lettering();
+   });
+</script>
+</body>
+</html>
+<style>
+
+</style>
+</textarea>
+</article>
+
+
+
+
+
+<article class='slide slide-accent'>
+	<h1>Tips &amp; Tricks</h1>
+</article>
+
+<article class='slide slide-list'>
+	<h2>useful tools</h2>
+</article>
+
+
+<article  style='background-image:url(images/fffallback.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://ffffallback.com/">ffffallback.com/</a></p>
+</div></div>
+</article>
+
+
+<article  style='background-image:url(images/soma.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://somadesign.ca/projects/fontfriend/">somadesign.ca/projects/fontfriend/</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/whatfont.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://chengyinliu.com/whatfont.html">chengyinliu.com/whatfont.html</a></p>
+</div></div>
+</article>
+
+<article class='slide slide-list'>
+	<h2>Trends</h2>
+</article>
+
+<article  style='background-image:url(images/moon.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://lostworldsfairs.com/moon/">lostworldsfairs.com/moon</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/activate.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://preparetoactivate.com/">preparetoactivate.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/webviz.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://webvisionaryawards.com/">webvisionaryawards.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/snowden.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://www.snowdenindustries.com/">snowdenindustries.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/frontend.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://www.frontend2011.com/">frontend2011.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/allaboard.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://nicewebtype.com/fonts/">nicewebtype.com/fonts</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/beercamp.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://beercamp.com/2010/">beercamp.com/2010</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/freestyle.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://freestyle-night.ch/">freestyle-night.ch</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/piiid.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://philipmeissnerdesign.com/">philipmeissnerdesign.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/shared.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://collaborativefund.com/">collaborativefund.com</a></p>
+</div></div>
+</article>
+
+<article  style='background-image:url(images/launch.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://golivebutton.com/">golivebutton.com</a></p>
+</div></div>
+</article>
+
+
+
+<article class='slide slide-subhead'>
+<h2><br/><br/>
+Font Effects....</h2>
+</article>
+
+
+
+<article  style='background-image:url(images/spooner.png);' class='slide slide-background-content-footer'>
+<div class="background-padding"><div class="background-wrapper">
+<p><a href="http://line25.com/articles/using-css-text-shadow-to-create-cool-text-effects">Demos</a></p>
+</div></div>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Exercise 3: Font Effects</h2>
+<p><a href="http://line25.com/articles/using-css-text-shadow-to-create-cool-text-effects">Tutorial</a></p>
+<textarea class='coder-editor coder-editor-full' data-language='html'>
+<style>
+
+</style>
+<div class='vintage-me'>Let's go Vintage Retro</div>
+<div class='neon-me'>Neon is cool</div>
+<div class='inset-me'>Let's go inset</div>
+<div class='fire-me'>How about some fire</div>
+
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+	<h1>Resources</h1>
+		<li class="slide">
+			<h3>typedia.com</h3>
+		</li>
+		<li class="slide">
+			<h3>typophile.com</h3>
+		</li>
+		<li class="slide">
+			<h3>ilovetype.com</h3>
+		</li>
+	   	<li class="slide">
+	   		<h3>alistapart.com </h3>
+	   	</li>
+	   	<li class="slide">
+	   		<h3>lettering.js</h3>
+	   	</li>
+	   	<li class="slide">
+	   		<h3>ffffallback.com</h3>
+	   	</li>
+		<li class="slide">
+	   		<h3>ifontyou.com</h3>
+	   	</li>
+</article>
+
+
+
+<article class='slide slide-homework'>
+<h2>Homework</h2>
+	<h3 class='slide'>Reading</h3>
+	<ul class='slide'>	
+			<li>
+                          <h3><a href='http://www.alistapart.com/articles/on-web-typography/'>On Web Typography by Jason Santa Maria</a>
+				</h3>
+			</li>
+			</ul>
+	
+	<h3 class='slide'>Coding</h3>
+       <ul class='slide'>
+			<li>
+				<h3>Download League Gothic and use it in your Cats vs. Dogs to make the logo 
+				    Georgia Bold italic for the 'vs' (Please make a catsdogs folder and copy all the files to the 07-class-type directory)
+				</h3>
+			</li>
+			<li>
+				<h3>Final Project - revise your designs and finish writing your HTML- Make sure it validates first!
+				</h3>
+			</li>
+		
+		</ul>
+</ul>	
+	
+	
+</article>
+
+<script src='dist/coderdeck.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
