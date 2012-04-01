@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Design 1 - Class 9</title>
+	<meta name="viewport" content="width=1024">
+	
+	
+    <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='dist/jquery.min.js'>SCRIPTEND
+	    </head>
+	    <body>
+		    CODE
+	    </body>
+	</html>
+	</script>
+
+	<script type='text/coderdeck' id='coderdeck-css-playground'>
+		<html>
+			<title>test</title>
+				CODE
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt;</p>
+				<div class='stuff'>&lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>&lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script>
+
+
+	<script type='text/coderdeck' id='coderdeck-plain'>
+		<html>
+			<title>test</title>
+			<link rel="stylesheet" href="reset.css">
+			<body>
+				CODE
+			</body>
+		</html>
+	</script>
+
+
+
+	<script type='text/coderdeck' id='coderdeck-style-example'>
+		<html>
+			<title>test</title>
+			<style>
+				CODE
+			</style>
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt; here</p>
+				<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script> 	
+
+	<script type='text/coderdeck' id='coderdeck-full-page'>
+	</script>
+	
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Javascript &amp; jQuery</h1>
+<h2>Week 9</h2>
+<p>CDGD304 - Spring 2012<br/>
+ <a href='http://bit.ly/deck-web304-s12/9'>http://bit.ly/deck-web304-s12/9</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+	<ol>
+		<li class="slide">
+			<h3>Review Homework</h3>
+		</li>
+		<li class="slide">
+			<h3>History of Type on the Web</h3>
+		</li>
+		<li class="slide">
+			<h3>CSS3 &amp; @font-face</h3>
+		</li>
+		<li class="slide">
+			<h3>Licensing vs Free</h3>
+		</li>
+		<li class="slide">
+			<h3>Choosing Fonts</h3>
+		</li>
+		<li class="slide">
+			<h3>Combining Fonts</h3>
+		</li>
+		<li class="slide">
+			<h3>Typography</h3>
+		</li>
+		<li class="slide">
+			<h3>Tips & Tricks</h3>
+		</li>
+		<li class="slide">
+			<h3>Trends</h3>
+		</li>
+	</ol>
+</article>
+
+
+<article class="slide slide-list">
+	<h2>Homework Review</h2>
+	<script>
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+function shuffleHomework(amt) {
+	if(amt <= 0) return;
+	$("#homework li").shuffle();
+	setTimeout(function() { shuffleHomework(amt - 1); },200);
+}
+
+	</script>
+	<a href='javascript:shuffleHomework(10);'>Shuffle</a>
+	<ul id='homework'>
+		<li><a href='http://lcamoroso.github.com/homework/index.html'>lcamoroso </a></li>
+		<li><a href='http://HilaryBraun.github.com/homework/index.html'>HilaryBraun</a></li>
+		<li><a href='http://adelenadent.github.com/homework/index.html'>adelenadent</a></li>
+		<li><a href='http://MadsG.github.com/homework/index.html'>MadsG</a></li>
+		<li><a href='http://erherskovitz.github.com/homework/index.html'>erherskovitz</a></li>
+		<li><a href='http://JuliDanielle.github.com/homework/index.html'>JuliDanielle</a></li>
+		<li><a href='http://ssuejkim.github.com/homework/index.html'>ssuejkim</a></li>
+		<li><a href='http://elknapp.github.com/homework/index.html'>elknapp</a></li>
+		<li><a href='http://linakong.github.com/homework/index.html'>linakong</a></li>
+		<li><a href='http://erikaleahey.github.com/homework/index.html'>erikaleahey</a></li>
+		<li><a href='http://zrmccarthy.github.com/homework/index.html'>zrmccarthy</a></li>
+		<li><a href='http://crpressman.github.com/homework/index.html'>crpressman</a></li>
+		<li><a href='http://MikeTavilla.github.com/homework/index.html'>MikeTavilla</a></li>
+	</ul>
+</article>
+
+<article class='slide slide-subhead'>
+   <h1>HTML/CSS Are Static</h1>
+   <h2>(Now only mostly true, as you can add interactivity via CSS Hover, Animation)</h2>
+</article>
+
+<article class='slide slide-list'>
+<h2>Anything else dynamic is "programmed"</h2>
+<ul>
+        <li class='slide'/><h3>Animation effects</h3></li>
+        <li class='slide'/><h3>Sliders</h3></li>
+        <li class='slide'/><h3>Drag and Drop</h3></li>
+        <li class='slide'/><h3>Autocomplete</h3></li>
+        <li class='slide'/><h3>Ajax </h3></li>
+
+</ul>
+</article>
+
+<article class='slide slide-subhead'>
+ <h1>And, unless it's flash..</h1>
+ <h2 class='slide'>It's programmed in Javascript<br/>"Lingua Franca" of the Web</h2>
+</article>
+
+<article class='slide slide-subhead'>
+ <h1>Disclaimer:</h1>
+ <h2>Programming is <em>Hard</em></h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>We'll do our best..</h1>
+<h2>But you're not going to learn it in a day. It take a lot longer than that...</h2>
+</article>
+
+<article class='slide slide-list'>
+  <h2>About Javascript</h2>
+  <ul>
+    <li class='slide'/><h3>First created in '96</h3></li>
+    <li class='slide'/><h3>Nothing, whatsoever to do with Java. </h3></li>
+    <li class='slide'/><h3>People hated it for a long time. Now people love it.</h3></li>
+    <li class='slide'/><h3>Now can be used for:</h3>
+      <ul>
+        <li class='slide'/><h4>Client Side</h4></li>
+        <li class='slide'/><h4>Server Side</h4></li>
+        <li class='slide'/><h4>Mobile (iPhone, Android)</h4></li>
+        <li class='slide'/><h4>Desktop</h4></li>
+      </ul>
+    </li>
+  </ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Javascript is both:</h2>
+   <ul>
+   	<li class='slide'>
+   		<h3>The worlds most popular language (beat Visual Basic)</h3>
+   	</li>
+   	<li class='slide'>
+   		<h3>The world's most unpopular language (people love to complain about it)</h3>
+   	</li>
+   </ul>
+</article>
+
+<article class='slide slide-list'>
+    <h2>Why so much hate for JavaScript?</h2>
+    <ul>
+      <li class='slide'/><h3>Incompatible Implementations</h3></li>
+      <li class='slide'/><h3>OO, but not a classical inheritance</h3></li>
+      <li class='slide'/><h3>Initial Implementation were slow</h3></li>
+      <li class='slide'/><h3>It looked like a silly toy next to Flash</h3></li>
+      <li class='slide'/><h3>No AJAX to start with (while Flash did)</h3></li>
+    </ul>
+</article>
+
+<article class='slide slide-list'>
+  <h2>What Changed?</h2>
+  <ul>
+    <li class='slide'/><h3>The "Gmail" and "Goole Maps Era" (2004-2005)</h3><a href="http://maps.google.com/">Google Maps</a></li>
+    <li class='slide'/><h3>"Framework Era" (2005-Today) <a href='http://jquery.com/'>jQuery</a></h3></li>
+    <li class='slide'/><h3><a href='http://news.cnet.com/8301-1001_3-10030888-92.html'>"Chrome Era" (2008-Today)</a></h3></li>
+	<li class='slide'/><h3>The "javascript MVC era" (2010-Today) <a href="http://alpha.salon.io/#/home">salon.io</a></h3></li>
+  </ul>
+</article>
+
+<article class='slide slide-list'>
+  <h2>Where does Javascript go?</h2>
+  <p>Similar to CSS - multiple options (notice: type='text/javascript' <em>NOT</em> required in HTML5):</p>
+  <ul>
+    <li>Include external .js file via:
+      <pre class='prettyprint'>&lt;script src='file.js'&gt;&lt;/script&gt;</pre>
+    </li>
+    <li>Include in the &lt;head&gt; tag
+     <pre class='prettyprint'>&lt;script&gt;
+ Our Javascript Code Goes Here
+&lt;/script&gt;</pre>
+    </li>
+    <li>Include in the &lt;body&gt; tag
+    <pre class='prettyprint'>&lt;script&gt;
+document.write("Let's write some HTML right here!");
+&lt;/script&gt;</pre>
+    </li>
+    <li> Include as an event
+    <pre class='prettyprint'>&lt;a href='javascript:void(0);' onclick='alert("Hello World!");'&gt;</pre>
+    </li>
+  </ul>
+</article>
+
+<article class='slide slide-list' >
+<h2>Where do we prefer?</h2>
+<p>Also Similar to CSS - the less 'inline' the better. (Generalization)</p>
+  <ul>
+    <li class='slide'/><h3><b>Downright Bad:</b> Include as an event</h3></li>
+    <li class='slide'/><h3><b>Even Less Good:</b> Include in the &lt;body&gt; tag</h3></li>
+    <li class='slide'/><h3><b>Less Good:</b> Include in the &lt;head&gt; tag</h3></li>
+    <li class='slide'/><h3><b>Best:</b> Include external .js file</h3></li>
+  </ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+  <h1>Again, we're not really teaching "programming" </h1>
+  <h2>There's <b>way</b> too much to try to cover in 1 class</h2>
+</article>
+
+<article class='slide slide-subhead'>
+  <h1 class='small'>We're really want to be able to use jQuery</h1>
+  <p>And need just enough Javascript to get by.</p>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>3 Main Goals for today</h2>
+<ol>
+	<li class="slide">
+		<h3>Be able to read and understand some JavaScript</h3>
+	</li>
+	<li class="slide">
+		<h3>Be able to manipulate documents with jQuery</h3>
+	</li>
+	<li class="slide">
+		<h3>Be able to use jQuery plugins</h3>
+	</li>
+</ol>
+</article>
+
+<article class='slide slide-list'>
+ <h2>What is jQuery?</h2>
+ <ul>
+ 	<li class="slide">
+ 		<h3>Most of what we do in Javscript is manipulate the DOM and Ajax</h3>
+ 	</li>
+ 	<li class="slide">
+ 		<h3>These are very long and cumbersome to do in straight javscript</h3>
+ 	</li>
+ 	<li class="slide">
+                <h3>On top of this, different browsers have different behavior</h3>
+ 	</li>
+ 	<li class="slide">
+                <h3>jQuery is a library that makes this easy and clean and <em>consistent</em></h3>
+ 	</li>
+ 	<li class="slide">
+ 		<h3>Works with CSS selectors </h3>
+ 	</li>
+ </ul>
+</article>
+
+<article class='slide slide-list'>
+ <h2>What pieces of Javascript do we need to understand?</h2>
+ <ul>
+   <ul>
+   	<li class="slide">
+   		<h3>Strings and numbers - basic pieces of information</h3>
+   	</li>
+   	<li class="slide">
+   		<h3>Variables - where to store pieces of information</h3>
+   	</li>
+   	<li class="slide">
+   		<h3>Functions - how to call reusable pieces of code</h3>
+   	</li>
+   	<li class="slide">
+   		<h3>Callbacks - functions that get called in response to something else</h3>
+   	</li>
+   	<li class="slide">
+   		<h3>Arrays - store a list of values (like a list of variables)</h3>
+   	</li>
+   	<li class="slide">
+   		<h3>Objects - We just need to understand a little bit on these</h3>
+   	</li>
+   	<li class="slide">
+                <h3>Conditionals - controlling what parts of a program executes</h3>
+   	</li>
+   </ul>
+ </ul>
+</article>
+
+<article class='slide slide-list'>
+ <h2>A Little Demo</h2>
+ <p>The goal is to understand everything in here by the end of class today</p>
+<textarea class='coder-editor coder-editor-full'>
+<script>
+  $(function() {
+  var images = [
+    { img: "images/image1.jpg", 
+      title: "This is a drop",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image2.jpg", 
+      title: "Dog here",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image3.jpg", 
+      title: "Some sort of building",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image4.jpg", 
+     title: "Nightscape",
+     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" }
+    ];
+  
+  $.each(images,function() {
+    var imageInfo = this;
+    
+    var img = $("<img>").attr({'src' : imageInfo.img,
+                     'width' : 128 });
+    img.click(function() {
+       window.open(this.src,"mywin","status=0,toolbar=0,width=400,height=400");
+    });
+    
+    img.hover(function() {
+      $(this).addClass("selected");
+      $("#thumbnails img:not(.selected)").stop().animate({opacity: 0.4});
+
+      $("#details").show();
+      $("#title").text(imageInfo.title);
+      $("#description").text(imageInfo.description);
+
+    },function() {
+      $("#thumbnails img:not(.selected)").stop().animate({opacity: 1.0});
+      $(this).removeClass("selected");
+      
+      $("#details").hide();
+    });
+
+    img.appendTo("#thumbnails");
+  });
+  
+});
+  
+</script>
+
+<section id='thumbnails'>
+  
+</section>
+<section id='details' style='display:none;'>
+<h2>Title: <span id='title'></span></h2>
+<p>Description: <span id='description'></span></p>
+</section>
+
+<style>
+  #thumbnails img {
+    margin:10px;
+    border:4px solid white;
+  }
+  
+  #thumbnails img:hover {
+    border-color:#CCC;
+  }
+</style>
+
+
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+ <h2>Javascript Housekeeping</h2>
+<textarea class='coder-editor'>
+<script>
+  // Two double slashes are one line comments
+
+  /* 
+     Slash star, star slash are multi-line comments
+   */
+
+  // Statements should end in a semi-colon:
+  alert("Statement 1");
+  alert("Statement 2");
+</script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Hello World!</h2>
+ <p>Call the built in 'alert' function and have it say "Hello World!" We don't use this all that often (it's ugly) - but it's really useful for debugging.</p>
+<textarea class='coder-editor'>
+
+  <script>
+     // Function call to Alert goes here
+  </script>
+</textarea>
+<script type='coder-solution'>
+  <script>
+    alert("Hello World!");
+  SCRIPTEND
+</script>
+</article>
+
+<article class='slide slide-list'>
+ <h2>Our friend the console and console.log</h2>
+ <p>Puts a result in the console - use Chrome or Firebug (must be open)</p>
+<textarea class='coder-editor' data-save='console-log'>
+
+  <script>
+     console.log(10);
+  </script>
+
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>What is a variable?</h2>
+<ul>
+	<li class="slide">
+		<h3>Stores a value</h3>
+	</li>
+	<li class="slide">
+		<h3>Deﬁned with “var” keyword*</h3>
+	</li>
+	<li class="slide">
+		<h3>Can be assigned with a single "=" </h3>
+	</li>
+	<li class="slide">
+		<h3>Can be changed with +=, -=, *=, etc. (which  are just shortcuts to ( i = i + 1 )</h3>
+	</li>
+	<li class="slide">
+		<h3>Are assigned by value to simple types, reference for objects.</h3>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+ <h2>Variables</h2>
+ <p>Let's do some math and some string manipulation and write out to the console.</p>
+<textarea class='coder-editor'>
+  <script>
+     var a = 10;
+     var b = 5;
+
+     // b += 10;
+
+     console.log("A: " + a);
+     console.log("B: " + b);
+     console.log("A + B: " + (a + b))
+
+  </script>
+
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Scope</h2>
+ <p>You can only use variables that are defined in the scope you call them.</p>
+<textarea class='coder-editor'>
+  <script>
+     var a = 10;
+
+     function myFunc() {
+      var c = 200;
+
+       console.log("in myFunc A: " + a);
+       console.log("in myFunc C: " + c);
+     }
+     myFunc();
+
+     console.log("A: " + a);
+     console.log("C: " + c);
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Functions</h2>
+ <p>Created with the "function" keyword, create reusable pieces of functionality.</p>
+<textarea class='coder-editor' data-save='web304-exercise-functions'>
+  <script>
+
+    function sqr(num) {
+       // call console.log on the square of num
+    }
+
+    sqr(10); // Should log 100
+    sqr(5);  // Should log 25
+    sqr(4);  // Should log 16
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Returning from Functions</h2>
+ <p>Use the return keyword to pass a value back to whatever called the function</p>
+<textarea class='coder-editor' data-save='web304-exercise-saver'>
+  <script>
+
+    function sqr(num) {
+       // return the square of the number
+    }
+
+    console.log(sqr(10)); // Should log 100
+    alert(sqr(5));  // Should alert 25
+
+    var value = sqr(sqr(4));  
+
+    alert(value);  // What is this?
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Timeouts</h2>
+ <p>we can use setTimeout to have something happen later, try it</p>
+<textarea class='coder-editor' data-save='web304-exercise-timeout'>
+  <script>
+
+    var delay = 5000; // Delay in MS
+
+    function callback() {
+         alert("Timer went off!");
+    }
+
+    setTimeout(callback,delay);
+
+  </script>
+</textarea>
+</article>
+
+
+
+
+<article class='slide slide-list'>
+<h2>Anonymous functions, callbacks</h2>
+ <p>We don't have to give our callback function a name, we can do it anonymously</p>
+<textarea class='coder-editor' data-save='web304-exercise-timer-saver'>
+  <script>
+
+
+    setTimeout(function() {
+      console.log('Timer1');
+    },5000);
+
+    // Add a second timer, called 5 second after the first
+
+  </script>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Why callbacks?</h2>
+<p>A lot of stuff on the web happens "Asynchronously" - AJAX, user actions, etc</p>
+<textarea class='coder-editor' data-save='web304-exercise-clickerama'>
+  <button id='my-button'>Click me Yo!</button>
+  <script>
+
+    var clickCount = 0;
+
+    // This here is some jQuery, don't worry about it
+    // We'll cover it in a few slides.
+    $("#my-button").click(function() {
+      clickCount += 1;
+
+      alert("Time's I've been clicked:" + clickCount);
+    });
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Arrays</h2>
+<ul>
+	<li class="slide">
+		<h3>Stores an “array” of values.</h3>
+	</li>
+	<li class="slide">
+		<h3>Usually created with the bracket [ ] operator: </h3>
+                <pre class='prettyprint'>
+var arr = [ 10, 20, 30 ];
+</pre>
+	</li>
+	<li class="slide">
+          <h3>Pull out a value using square brackets [] starting at 0:</h3>
+              <pre class='prettyprint'>
+arr[0] // 10
+arr[1] // 20
+</pre>
+	</li>
+	<li class="slide">
+		<h3>get the number of entries with .length</h3>
+                <pre class='prettyprint'>
+arr.length // 3                
+</pre>
+	</li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Playing with arrays</h2>
+
+<textarea class='coder-editor' data-save='web304-exercise-arrays'>
+  <script>
+
+    var myArray = [ 0, 10, 20, 30, 40 ];
+
+    console.log("myArray[2] is:" + myArray[2]);
+
+    var index = 2;
+
+    // Using a variable as an index
+    console.log("myArray[" + index + "] is:" + myArray[index]);
+
+    // Showing all variable values with jQuery $.each and a callback
+    // Stored in this
+  /*  $.each(myArray,function(idx) {
+      console.log("myArray[" + idx + "] is:" + this);
+    }); */
+
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Objects</h2>
+<ul>
+	<li class="slide">
+		<h3>A way to store data and methods together. </h3>
+	</li>
+	<li class="slide">
+		<h3>Array was an example of a built in object</h3>
+	</li>
+	<li class="slide">
+          <h3>Can create with JSON notation:</h3>
+          <pre class='prettyprint'>
+var obj = { a: 1, b: 2 };
+</pre>
+	</li>
+	<li class="slide">
+		<h3>Access the same as arrays - with square brackets.</h3>
+          <pre class='prettyprint'>
+obj['a'] // 1 
+obj['b'] // 2
+</pre>
+
+	</li>
+	<li class="slide">
+		<h3>Can also access with the dot operator</h3>
+          <pre class='prettyprint'>
+obj.a // 1
+obj.b // 2
+</pre>
+	</li>
+        <li class="slide">
+        	<h3>Can also have functions as properties</h3>
+        </li>
+        <li class="slide">
+        	<h3>Those functions can use the this property when called</h3>
+        </li>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Objects</h2>
+
+<textarea class='coder-editor' data-save='web304-exercise-objects'>
+  <script>
+    var myObject = { 'a' : 10,
+                     'b' : 'Stringer',
+                     'c' : 20
+                   };
+
+   // Try pulling out various pieces of myObject using
+   // both square brackets and the dot operator
+
+    alert(myObject.a);
+
+  </script>
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Conditionals</h2>
+<ul>
+<li class="slide">
+	<h3>Things in javascript are either true or not true.</h3>
+</li>
+<li class="slide">
+	<h3>0, false, null, "" are all false</h3>
+</li>
+<li class="slide">
+	<h3>Everything else is true.</h3>
+</li>
+<li class="slide">
+  <h3>Use operands to check relationship between two values:</h3>
+  <pre class='prettyprint'>
+==, ===, <=, >=, !=
+
+1 == 2 // false
+1 == 1 // true
+  </pre>
+</li>
+<li class="slide">
+  <h3>Basic conditionals:</h3>
+  <ul>
+    <li class="slide">
+      <pre>if(condition) { }</pre>
+    </li>
+    <li class="slide">
+      <pre>if(condition) { } else { }</pre>
+    </li>
+    <li class="slide">
+      <pre>if(condition) { } else if { } else { }</pre>
+    </li>
+  </ul>
+</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>Conditional Exercise</h2>
+<p>Use a conditional to check if a user confirmed a ok/cancel question. Then use prompt and test against a return value. </p>
+
+<textarea class='coder-editor' data-save='web304-exercise-conditional'>
+  <script>
+    console.log(confirm("Really delete everything?"));
+    console.log(prompt("Delete how many items?"));
+  </script>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>jQuery Basics</h2>
+<ul>
+	<li class="slide">
+		<h3>Everything is “namespaced” inside of the jQuery object, which is aliased with “$”</h3>
+	</li>
+	<li class="slide">
+		<h3>...which means everything you do in jQuery starts with a $</h3>
+	</li>
+	<li class="slide">
+		<h3>Uses CSS selectors for picking pieces of the DOM out.</h3>
+	</li>
+</ul>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Docs are your Friend</h1>
+<h2>Get comfortable with <a href='http://docs.jquery.com'>docs.jquery.com</a></h2>
+</article>
+
+<article class='slide slide-list'>
+<h2>Loading jQuery</h2>
+<h3>Include from a CDN or locally</h3>
+<pre class='prettyprint'>
+&lt;script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'&gt;&lt;/script&gt;
+</pre>
+<h3>Or</h3>
+<pre class='prettyprint'>
+&lt;script src='js/jquery.min.js'&gt;&lt;/script&gt;
+</pre>
+<p>Need to make sure we have the file in the right location, can view in browser if there's a problem.</p>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Using jQuery</h2>
+<p>Since we often include Javscript in the head of the document, we need to make sure we wait until the
+page is loaded before we use it. We can use the jQuery bind function to load stuff at the appropriate point.   </p>
+<pre class='prettyprint'>
+&lt;script&gt;
+$(document).bind("ready",function() {
+  // Dom Loaded
+});
+&lt;/script&gt;
+</pre>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Why this is important..</h2>
+<textarea class='coder-editor'>
+<script>
+  $("#header").html("Modified Header");
+</script>
+<h2 id='header'>A Header</h2>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Shorthand </h2>
+<p>Since this is so common, we can use a shorthand for this of $(function() { }) ... </p>
+<pre class='prettyprint'>
+&lt;script&gt;
+$(function() {
+  // Dom Loaded
+});
+&lt;/script&gt;
+</pre>
+</article>
+
+ <article class='slide slide-list'>
+  <h2>Basic selection + manipulation </h2>
+  <p>Let's try out $.text, $.html, $.hide, $.show,  $.css, $.attr, $.addClass, $.hasClass, $.removeClass
+   <a href='http://api.jquery.com/category/selectors/'>Selector Docs</a> / <a href='http://api.jquery.com/category/manipulation/'>Manipulation Docs</a>
+</p>
+<textarea class='coder-editor'>
+<script>
+$(function() {
+
+
+});
+</script>
+<header>
+   <h1>Site Header</h1>
+</header>
+<nav id='main-nav'>
+  <a href='#'>Item 1</a> <a href='#'>Item 2</a> <a href='#'>Item 3</a>
+</nav>
+<section>
+  <article>
+  <h1 class='article-header'>Title</h1>
+  <p>Lorem Ipsum Dolor Sic Amet</p>
+  </article>
+  <article>
+    <h1  class='article-header'>Title 2</h1>
+    <p>Lorem Ipsum Dolor Sic Amet</p>
+  </article>
+</section>
+</textarea>
+
+</article>
+
+<article class='slide slide-list'>
+  <h2>Some basic DOM insertion</h2>
+  <p>Let's try out creating elements with $(), then using $.before, $.after, $.append, $.prepend, $.wrap, $.appendTo, both with text and elements.</p>
+<textarea class='coder-editor'>
+<script>
+$(document).ready(function() {
+
+
+});
+</script>
+<header>
+   <h1>Site Header</h1>
+</header>
+<nav id='main-nav'>
+  <a href='#'>Item 1</a> <a href='#'>Item 2</a> <a href='#'>Item 3</a>
+</nav>
+<section>
+  <article>
+  <h1 class='article-header'>Title</h1>
+  <p>Lorem Ipsum Dolor Sic Amet</p>
+  </article>
+  <article>
+    <h1  class='article-header'>Title 2</h1>
+    <p>Lorem Ipsum Dolor Sic Amet</p>
+  </article>
+</section>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Fun Stuff: Animation and transforms</h2>
+ <p> $.fadeOut, $.fadeIn, $.slideDown, $.slideUp, $.toggle, $.stop, $.animate</p>
+<textarea class='coder-editor'>
+<script>
+$(document).ready(function() {
+
+
+});
+</script>
+
+
+&lt;style&gt;
+  .box { 
+    position:absolute; 
+    width:100px; 
+    height:100px;
+    background-color:red;
+    }
+
+  #box2 { right:0px; }
+&lt;/style&gt;
+
+&lt;div class='box' id='box1'&gt;&lt;/div&gt;
+&lt;div class='box' id='box2'&gt;&lt;/div&gt;
+
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Events</h2>
+<p>$.bind, $.click, $.dblclick, $.mouseenter, $.mouseleave, $.hover </p>
+<textarea class='coder-editor' >
+<script>
+
+$(document).ready(function() {
+
+
+});
+
+</script>
+
+
+&lt;style&gt;
+  .box { 
+    position:absolute; 
+    width:100px; 
+    height:100px;
+    background-color:red;
+    }
+
+  #box2 { right:0px; }
+&lt;/style&gt;
+
+&lt;div class='box' id='box1'&gt;&lt;/div&gt;
+&lt;div class='box' id='box2'&gt;&lt;/div&gt;
+
+</textarea>
+</article>
+
+
+<article class='slide slide-list'>
+ <h2>Demo Revisited</h2>
+ <p>The goal is to understand everything in here by the end of class today</p>
+<textarea class='coder-editor coder-editor-full'>
+<script>
+  $(function() {
+  var images = [
+    { img: "images/image1.jpg", 
+      title: "This is a drop",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image2.jpg", 
+      title: "Dog here",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image3.jpg", 
+      title: "Some sort of building",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
+    { img: "images/image4.jpg", 
+     title: "Nightscape",
+     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" }
+    ];
+  
+  $.each(images,function() {
+    var imageInfo = this;
+    
+    var img = $("<img>").attr({'src' : imageInfo.img,
+                     'width' : 128 });
+    img.click(function() {
+       window.open(this.src,"mywin","status=0,toolbar=0,width=400,height=400");
+    });
+    
+    img.hover(function() {
+      $(this).addClass("selected");
+      $("#thumbnails img:not(.selected)").stop().animate({opacity: 0.4});
+
+      $("#details").show();
+      $("#title").text(imageInfo.title);
+      $("#description").text(imageInfo.description);
+
+    },function() {
+      $("#thumbnails img:not(.selected)").stop().animate({opacity: 1.0});
+      $(this).removeClass("selected");
+      
+      $("#details").hide();
+    });
+
+    img.appendTo("#thumbnails");
+  });
+  
+});
+  
+</script>
+
+<section id='thumbnails'>
+  
+</section>
+<section id='details' style='display:none;'>
+<h2>Title: <span id='title'></span></h2>
+<p>Description: <span id='description'></span></p>
+</section>
+
+<style>
+  #thumbnails img {
+    margin:10px;
+    border:4px solid white;
+  }
+  
+  #thumbnails img:hover {
+    border-color:#CCC;
+  }
+</style>
+
+
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+<h2>Putting it all together</h2>
+<p>Let's use two buttons to increase and decrease a counter.</p>
+
+<textarea class='coder-editor' data-save='web304-exercise-finale'>
+  <button id='increase'>Increase</button>
+  <button id='decrease'>Decrase</button>
+
+  <div id='counter'>0</div>
+  <script>
+
+    var counterValue = 0;
+
+    // Use the click method on $("#increase").click(function() { ... });
+    // Use console.log to map the value
+
+    // Next use the click method on #decrease to decrease the counter
+
+    // Now use the html() method to set the value of coutner
+
+    // Now make sure we don't go under 0 or over 10
+  </script>
+</textarea>
+</article>
+
+
+
+
+
+<article class='slide slide-list'>
+<h2>Plugins: Barebones</h2>
+<p>Let's use the cycle plugin: <a href='http://jquery.malsup.com/cycle/'>http://jquery.malsup.com/cycle/</a> (images from <a href='http://lorempixel.com'>http://lorempixel.com</a>)</p>
+<textarea class='coder-editor' data-coder-template="coderdeck-style-nothing">
+<html>
+  <head>
+    <!-- We include jquery -->
+    <script src='js/jquery.min.js'></script>
+    <!-- We include the plugin -->
+    <script src='js/jquery.cycle.all.js'></script>
+  </head>
+  <body>
+    <div id='slideshow'>
+      <img src='images/image1.jpg'/>
+      <img src='images/image2.jpg'/>
+      <img src='images/image3.jpg'/>
+      <img src='images/image4.jpg'/>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('#slideshow').cycle();
+        });     
+    </script>
+  </body>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Cycle: Style and Options</h2>
+<textarea class='coder-editor' data-coder-template="coderdeck-style-nothing">
+<html>
+  <head>
+    <!-- We include jquery -->
+    <script src='js/jquery.min.js'></script>
+    <!-- We include the plugin -->
+    <script src='js/jquery.cycle.all.js'></script>
+
+    <style>
+       /* #slideshow img { border:1px solid black; padding:10px; border-radius:10px; } */
+    </style>
+  </head>
+  <body>
+    <div id='slideshow'>
+      <img src='images/image1.jpg'/>
+      <img src='images/image2.jpg'/>
+      <img src='images/image3.jpg'/>
+      <img src='images/image4.jpg'/>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('#slideshow').cycle({
+          //next: "#slideshow",
+          //speed: 5000,
+          //timeout: 200,
+          //random: 1,
+          fx: 'fade' 
+          // transition types, ex: fade, scrollUp, shuffle, etc...
+        });
+      });     </script>
+  </body>
+</textarea>
+</article>
+
+
+
+<article class='slide slide-list'>
+ <h2>Ajax</h2>
+ <p><a href='http://api.jquery.com/jQuery.ajax/'>$.ajax</a>, $.get, $.post, $.getJSON </p>
+<textarea class='coder-editor'>
+<script>
+$(document).ready(function() {
+
+var ajax = $.get("names.json",function(data) {
+  alert(data);
+});
+
+});
+
+</script>
+
+</textarea>
+
+
+ </article>
+
+ <article class='slide'>
+ <h2>JSONp</h2>
+ <p>Ajax is same-domain only. So there's a hack to pull data across domains called $.getScript </p>
+ <textarea class='coder-editor'>
+<script>
+$(document).ready(function() {
+ var username = 'aplusk';
+ var count = 10;
+ $.getJSON('http://twitter.com/statuses/user_timeline/' + username + '.json?callback=?',
+	  function(data) {
+		alert(data);
+		console.log(data);
+	  });
+});
+</script>
+
+</textarea>
+</article>
+
+
+<article class='slide slide-homework'>
+<h2>Homework</h2>
+	<h3 class='slide'>Coding</h3>
+       <ul class='slide'>
+			<li>
+                          <h3>Through both the beginner and intermediate courses on codecademy</h3>
+                          <h3><a href='http://www.codecademy.com/courses/programming-intro'>Beginning Programming</a> / 
+                            <a href='http://www.codecademy.com/courses/jquery-and-the-dom'>jQuery and the DOM</a> /
+                            <a href='http://www.codecademy.com/courses/functions_in_javascript'>Functions in Javascript</a>
+                          </h3>
+			</li>
+		</ul>
+</ul>	
+	
+	
+</article>
+
+
+
+<script src='dist/coderdeck.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
