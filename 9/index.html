@@ -70,6 +70,7 @@
 	</script> 	
 
 	<script type='text/coderdeck' id='coderdeck-full-page'>
+	CODE
 	</script>
 	
 	
@@ -78,7 +79,7 @@
 
 <!-- Create any number of elements with class slide within the container -->
 <article class='slide slide-subhead'>
-<h1>Javascript &amp; jQuery</h1>
+<h1>Javascript, jQuery &amp; Interaction</h1>
 <h2>Week 9</h2>
 <p>CDGD304 - Spring 2012<br/>
  <a href='http://bit.ly/deck-web304-s12/9'>http://bit.ly/deck-web304-s12/9</a></p>
@@ -91,28 +92,22 @@
 			<h3>Review Homework</h3>
 		</li>
 		<li class="slide">
-			<h3>History of Type on the Web</h3>
+			<h3>Intro to JavaScript</h3>
 		</li>
 		<li class="slide">
-			<h3>CSS3 &amp; @font-face</h3>
+			<h3>jQuery Basics</h3>
 		</li>
 		<li class="slide">
-			<h3>Licensing vs Free</h3>
+			<h3>Hover Nav</h3>
 		</li>
 		<li class="slide">
-			<h3>Choosing Fonts</h3>
+			<h3>Sticky Nav</h3>
 		</li>
 		<li class="slide">
-			<h3>Combining Fonts</h3>
+			<h3>Sliders</h3>
 		</li>
 		<li class="slide">
-			<h3>Typography</h3>
-		</li>
-		<li class="slide">
-			<h3>Tips & Tricks</h3>
-		</li>
-		<li class="slide">
-			<h3>Trends</h3>
+			<h3>Gallery</h3>
 		</li>
 	</ol>
 </article>
@@ -335,481 +330,6 @@ document.write("Let's write some HTML right here!");
  </ul>
 </article>
 
-<article class='slide slide-list'>
- <h2>What pieces of Javascript do we need to understand?</h2>
- <ul>
-   <ul>
-   	<li class="slide">
-   		<h3>Strings and numbers - basic pieces of information</h3>
-   	</li>
-   	<li class="slide">
-   		<h3>Variables - where to store pieces of information</h3>
-   	</li>
-   	<li class="slide">
-   		<h3>Functions - how to call reusable pieces of code</h3>
-   	</li>
-   	<li class="slide">
-   		<h3>Callbacks - functions that get called in response to something else</h3>
-   	</li>
-   	<li class="slide">
-   		<h3>Arrays - store a list of values (like a list of variables)</h3>
-   	</li>
-   	<li class="slide">
-   		<h3>Objects - We just need to understand a little bit on these</h3>
-   	</li>
-   	<li class="slide">
-                <h3>Conditionals - controlling what parts of a program executes</h3>
-   	</li>
-   </ul>
- </ul>
-</article>
-
-<article class='slide slide-list'>
- <h2>A Little Demo</h2>
- <p>The goal is to understand everything in here by the end of class today</p>
-<textarea class='coder-editor coder-editor-full'>
-<script>
-  $(function() {
-  var images = [
-    { img: "images/image1.jpg", 
-      title: "This is a drop",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image2.jpg", 
-      title: "Dog here",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image3.jpg", 
-      title: "Some sort of building",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image4.jpg", 
-     title: "Nightscape",
-     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" }
-    ];
-  
-  $.each(images,function() {
-    var imageInfo = this;
-    
-    var img = $("<img>").attr({'src' : imageInfo.img,
-                     'width' : 128 });
-    img.click(function() {
-       window.open(this.src,"mywin","status=0,toolbar=0,width=400,height=400");
-    });
-    
-    img.hover(function() {
-      $(this).addClass("selected");
-      $("#thumbnails img:not(.selected)").stop().animate({opacity: 0.4});
-
-      $("#details").show();
-      $("#title").text(imageInfo.title);
-      $("#description").text(imageInfo.description);
-
-    },function() {
-      $("#thumbnails img:not(.selected)").stop().animate({opacity: 1.0});
-      $(this).removeClass("selected");
-      
-      $("#details").hide();
-    });
-
-    img.appendTo("#thumbnails");
-  });
-  
-});
-  
-</script>
-
-<section id='thumbnails'>
-  
-</section>
-<section id='details' style='display:none;'>
-<h2>Title: <span id='title'></span></h2>
-<p>Description: <span id='description'></span></p>
-</section>
-
-<style>
-  #thumbnails img {
-    margin:10px;
-    border:4px solid white;
-  }
-  
-  #thumbnails img:hover {
-    border-color:#CCC;
-  }
-</style>
-
-
-</textarea>
-</article>
-
-
-
-<article class='slide slide-list'>
- <h2>Javascript Housekeeping</h2>
-<textarea class='coder-editor'>
-<script>
-  // Two double slashes are one line comments
-
-  /* 
-     Slash star, star slash are multi-line comments
-   */
-
-  // Statements should end in a semi-colon:
-  alert("Statement 1");
-  alert("Statement 2");
-</script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Hello World!</h2>
- <p>Call the built in 'alert' function and have it say "Hello World!" We don't use this all that often (it's ugly) - but it's really useful for debugging.</p>
-<textarea class='coder-editor'>
-
-  <script>
-     // Function call to Alert goes here
-  </script>
-</textarea>
-<script type='coder-solution'>
-  <script>
-    alert("Hello World!");
-  SCRIPTEND
-</script>
-</article>
-
-<article class='slide slide-list'>
- <h2>Our friend the console and console.log</h2>
- <p>Puts a result in the console - use Chrome or Firebug (must be open)</p>
-<textarea class='coder-editor' data-save='console-log'>
-
-  <script>
-     console.log(10);
-  </script>
-
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
-<h2>What is a variable?</h2>
-<ul>
-	<li class="slide">
-		<h3>Stores a value</h3>
-	</li>
-	<li class="slide">
-		<h3>Deﬁned with “var” keyword*</h3>
-	</li>
-	<li class="slide">
-		<h3>Can be assigned with a single "=" </h3>
-	</li>
-	<li class="slide">
-		<h3>Can be changed with +=, -=, *=, etc. (which  are just shortcuts to ( i = i + 1 )</h3>
-	</li>
-	<li class="slide">
-		<h3>Are assigned by value to simple types, reference for objects.</h3>
-	</li>
-</ul>
-</article>
-
-<article class='slide slide-list'>
- <h2>Variables</h2>
- <p>Let's do some math and some string manipulation and write out to the console.</p>
-<textarea class='coder-editor'>
-  <script>
-     var a = 10;
-     var b = 5;
-
-     // b += 10;
-
-     console.log("A: " + a);
-     console.log("B: " + b);
-     console.log("A + B: " + (a + b))
-
-  </script>
-
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Scope</h2>
- <p>You can only use variables that are defined in the scope you call them.</p>
-<textarea class='coder-editor'>
-  <script>
-     var a = 10;
-
-     function myFunc() {
-      var c = 200;
-
-       console.log("in myFunc A: " + a);
-       console.log("in myFunc C: " + c);
-     }
-     myFunc();
-
-     console.log("A: " + a);
-     console.log("C: " + c);
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Functions</h2>
- <p>Created with the "function" keyword, create reusable pieces of functionality.</p>
-<textarea class='coder-editor' data-save='web304-exercise-functions'>
-  <script>
-
-    function sqr(num) {
-       // call console.log on the square of num
-    }
-
-    sqr(10); // Should log 100
-    sqr(5);  // Should log 25
-    sqr(4);  // Should log 16
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Returning from Functions</h2>
- <p>Use the return keyword to pass a value back to whatever called the function</p>
-<textarea class='coder-editor' data-save='web304-exercise-saver'>
-  <script>
-
-    function sqr(num) {
-       // return the square of the number
-    }
-
-    console.log(sqr(10)); // Should log 100
-    alert(sqr(5));  // Should alert 25
-
-    var value = sqr(sqr(4));  
-
-    alert(value);  // What is this?
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Timeouts</h2>
- <p>we can use setTimeout to have something happen later, try it</p>
-<textarea class='coder-editor' data-save='web304-exercise-timeout'>
-  <script>
-
-    var delay = 5000; // Delay in MS
-
-    function callback() {
-         alert("Timer went off!");
-    }
-
-    setTimeout(callback,delay);
-
-  </script>
-</textarea>
-</article>
-
-
-
-
-<article class='slide slide-list'>
-<h2>Anonymous functions, callbacks</h2>
- <p>We don't have to give our callback function a name, we can do it anonymously</p>
-<textarea class='coder-editor' data-save='web304-exercise-timer-saver'>
-  <script>
-
-
-    setTimeout(function() {
-      console.log('Timer1');
-    },5000);
-
-    // Add a second timer, called 5 second after the first
-
-  </script>
-</textarea>
-</article>
-
-<article class='slide slide-list'>
-<h2>Why callbacks?</h2>
-<p>A lot of stuff on the web happens "Asynchronously" - AJAX, user actions, etc</p>
-<textarea class='coder-editor' data-save='web304-exercise-clickerama'>
-  <button id='my-button'>Click me Yo!</button>
-  <script>
-
-    var clickCount = 0;
-
-    // This here is some jQuery, don't worry about it
-    // We'll cover it in a few slides.
-    $("#my-button").click(function() {
-      clickCount += 1;
-
-      alert("Time's I've been clicked:" + clickCount);
-    });
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
-<h2>Arrays</h2>
-<ul>
-	<li class="slide">
-		<h3>Stores an “array” of values.</h3>
-	</li>
-	<li class="slide">
-		<h3>Usually created with the bracket [ ] operator: </h3>
-                <pre class='prettyprint'>
-var arr = [ 10, 20, 30 ];
-</pre>
-	</li>
-	<li class="slide">
-          <h3>Pull out a value using square brackets [] starting at 0:</h3>
-              <pre class='prettyprint'>
-arr[0] // 10
-arr[1] // 20
-</pre>
-	</li>
-	<li class="slide">
-		<h3>get the number of entries with .length</h3>
-                <pre class='prettyprint'>
-arr.length // 3                
-</pre>
-	</li>
-</ul>
-</article>
-
-<article class='slide slide-list'>
-<h2>Playing with arrays</h2>
-
-<textarea class='coder-editor' data-save='web304-exercise-arrays'>
-  <script>
-
-    var myArray = [ 0, 10, 20, 30, 40 ];
-
-    console.log("myArray[2] is:" + myArray[2]);
-
-    var index = 2;
-
-    // Using a variable as an index
-    console.log("myArray[" + index + "] is:" + myArray[index]);
-
-    // Showing all variable values with jQuery $.each and a callback
-    // Stored in this
-  /*  $.each(myArray,function(idx) {
-      console.log("myArray[" + idx + "] is:" + this);
-    }); */
-
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
-<h2>Objects</h2>
-<ul>
-	<li class="slide">
-		<h3>A way to store data and methods together. </h3>
-	</li>
-	<li class="slide">
-		<h3>Array was an example of a built in object</h3>
-	</li>
-	<li class="slide">
-          <h3>Can create with JSON notation:</h3>
-          <pre class='prettyprint'>
-var obj = { a: 1, b: 2 };
-</pre>
-	</li>
-	<li class="slide">
-		<h3>Access the same as arrays - with square brackets.</h3>
-          <pre class='prettyprint'>
-obj['a'] // 1 
-obj['b'] // 2
-</pre>
-
-	</li>
-	<li class="slide">
-		<h3>Can also access with the dot operator</h3>
-          <pre class='prettyprint'>
-obj.a // 1
-obj.b // 2
-</pre>
-	</li>
-        <li class="slide">
-        	<h3>Can also have functions as properties</h3>
-        </li>
-        <li class="slide">
-        	<h3>Those functions can use the this property when called</h3>
-        </li>
-</ul>
-</article>
-
-<article class='slide slide-list'>
-<h2>Objects</h2>
-
-<textarea class='coder-editor' data-save='web304-exercise-objects'>
-  <script>
-    var myObject = { 'a' : 10,
-                     'b' : 'Stringer',
-                     'c' : 20
-                   };
-
-   // Try pulling out various pieces of myObject using
-   // both square brackets and the dot operator
-
-    alert(myObject.a);
-
-  </script>
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
-<h2>Conditionals</h2>
-<ul>
-<li class="slide">
-	<h3>Things in javascript are either true or not true.</h3>
-</li>
-<li class="slide">
-	<h3>0, false, null, "" are all false</h3>
-</li>
-<li class="slide">
-	<h3>Everything else is true.</h3>
-</li>
-<li class="slide">
-  <h3>Use operands to check relationship between two values:</h3>
-  <pre class='prettyprint'>
-==, ===, <=, >=, !=
-
-1 == 2 // false
-1 == 1 // true
-  </pre>
-</li>
-<li class="slide">
-  <h3>Basic conditionals:</h3>
-  <ul>
-    <li class="slide">
-      <pre>if(condition) { }</pre>
-    </li>
-    <li class="slide">
-      <pre>if(condition) { } else { }</pre>
-    </li>
-    <li class="slide">
-      <pre>if(condition) { } else if { } else { }</pre>
-    </li>
-  </ul>
-</ul>
-</article>
-
-<article class='slide slide-list'>
-<h2>Conditional Exercise</h2>
-<p>Use a conditional to check if a user confirmed a ok/cancel question. Then use prompt and test against a return value. </p>
-
-<textarea class='coder-editor' data-save='web304-exercise-conditional'>
-  <script>
-    console.log(confirm("Really delete everything?"));
-    console.log(prompt("Delete how many items?"));
-  </script>
-</textarea>
-</article>
 
 <article class='slide slide-list'>
 <h2>jQuery Basics</h2>
@@ -882,240 +402,11 @@ $(function() {
 </pre>
 </article>
 
- <article class='slide slide-list'>
-  <h2>Basic selection + manipulation </h2>
-  <p>Let's try out $.text, $.html, $.hide, $.show,  $.css, $.attr, $.addClass, $.hasClass, $.removeClass
-   <a href='http://api.jquery.com/category/selectors/'>Selector Docs</a> / <a href='http://api.jquery.com/category/manipulation/'>Manipulation Docs</a>
-</p>
-<textarea class='coder-editor'>
-<script>
-$(function() {
-
-
-});
-</script>
-<header>
-   <h1>Site Header</h1>
-</header>
-<nav id='main-nav'>
-  <a href='#'>Item 1</a> <a href='#'>Item 2</a> <a href='#'>Item 3</a>
-</nav>
-<section>
-  <article>
-  <h1 class='article-header'>Title</h1>
-  <p>Lorem Ipsum Dolor Sic Amet</p>
-  </article>
-  <article>
-    <h1  class='article-header'>Title 2</h1>
-    <p>Lorem Ipsum Dolor Sic Amet</p>
-  </article>
-</section>
-</textarea>
-
-</article>
-
-<article class='slide slide-list'>
-  <h2>Some basic DOM insertion</h2>
-  <p>Let's try out creating elements with $(), then using $.before, $.after, $.append, $.prepend, $.wrap, $.appendTo, both with text and elements.</p>
-<textarea class='coder-editor'>
-<script>
-$(document).ready(function() {
-
-
-});
-</script>
-<header>
-   <h1>Site Header</h1>
-</header>
-<nav id='main-nav'>
-  <a href='#'>Item 1</a> <a href='#'>Item 2</a> <a href='#'>Item 3</a>
-</nav>
-<section>
-  <article>
-  <h1 class='article-header'>Title</h1>
-  <p>Lorem Ipsum Dolor Sic Amet</p>
-  </article>
-  <article>
-    <h1  class='article-header'>Title 2</h1>
-    <p>Lorem Ipsum Dolor Sic Amet</p>
-  </article>
-</section>
-</textarea>
-</article>
-
-
-
-<article class='slide slide-list'>
-<h2>Fun Stuff: Animation and transforms</h2>
- <p> $.fadeOut, $.fadeIn, $.slideDown, $.slideUp, $.toggle, $.stop, $.animate</p>
-<textarea class='coder-editor'>
-<script>
-$(document).ready(function() {
-
-
-});
-</script>
-
-
-&lt;style&gt;
-  .box { 
-    position:absolute; 
-    width:100px; 
-    height:100px;
-    background-color:red;
-    }
-
-  #box2 { right:0px; }
-&lt;/style&gt;
-
-&lt;div class='box' id='box1'&gt;&lt;/div&gt;
-&lt;div class='box' id='box2'&gt;&lt;/div&gt;
-
-</textarea>
-</article>
-
-<article class='slide slide-list'>
-<h2>Events</h2>
-<p>$.bind, $.click, $.dblclick, $.mouseenter, $.mouseleave, $.hover </p>
-<textarea class='coder-editor' >
-<script>
-
-$(document).ready(function() {
-
-
-});
-
-</script>
-
-
-&lt;style&gt;
-  .box { 
-    position:absolute; 
-    width:100px; 
-    height:100px;
-    background-color:red;
-    }
-
-  #box2 { right:0px; }
-&lt;/style&gt;
-
-&lt;div class='box' id='box1'&gt;&lt;/div&gt;
-&lt;div class='box' id='box2'&gt;&lt;/div&gt;
-
-</textarea>
-</article>
-
-
-<article class='slide slide-list'>
- <h2>Demo Revisited</h2>
- <p>The goal is to understand everything in here by the end of class today</p>
-<textarea class='coder-editor coder-editor-full'>
-<script>
-  $(function() {
-  var images = [
-    { img: "images/image1.jpg", 
-      title: "This is a drop",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image2.jpg", 
-      title: "Dog here",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image3.jpg", 
-      title: "Some sort of building",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" },
-    { img: "images/image4.jpg", 
-     title: "Nightscape",
-     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus quam, commodo ac posuere non, facilisis et ligula. Praesent elementum sodales leo, non ultrices dolor cursus at. Suspendisse sed ipsum tempor est volutpat commodo nec quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit" }
-    ];
-  
-  $.each(images,function() {
-    var imageInfo = this;
-    
-    var img = $("<img>").attr({'src' : imageInfo.img,
-                     'width' : 128 });
-    img.click(function() {
-       window.open(this.src,"mywin","status=0,toolbar=0,width=400,height=400");
-    });
-    
-    img.hover(function() {
-      $(this).addClass("selected");
-      $("#thumbnails img:not(.selected)").stop().animate({opacity: 0.4});
-
-      $("#details").show();
-      $("#title").text(imageInfo.title);
-      $("#description").text(imageInfo.description);
-
-    },function() {
-      $("#thumbnails img:not(.selected)").stop().animate({opacity: 1.0});
-      $(this).removeClass("selected");
-      
-      $("#details").hide();
-    });
-
-    img.appendTo("#thumbnails");
-  });
-  
-});
-  
-</script>
-
-<section id='thumbnails'>
-  
-</section>
-<section id='details' style='display:none;'>
-<h2>Title: <span id='title'></span></h2>
-<p>Description: <span id='description'></span></p>
-</section>
-
-<style>
-  #thumbnails img {
-    margin:10px;
-    border:4px solid white;
-  }
-  
-  #thumbnails img:hover {
-    border-color:#CCC;
-  }
-</style>
-
-
-</textarea>
-</article>
-
-
-
-<article class='slide slide-list'>
-<h2>Putting it all together</h2>
-<p>Let's use two buttons to increase and decrease a counter.</p>
-
-<textarea class='coder-editor' data-save='web304-exercise-finale'>
-  <button id='increase'>Increase</button>
-  <button id='decrease'>Decrase</button>
-
-  <div id='counter'>0</div>
-  <script>
-
-    var counterValue = 0;
-
-    // Use the click method on $("#increase").click(function() { ... });
-    // Use console.log to map the value
-
-    // Next use the click method on #decrease to decrease the counter
-
-    // Now use the html() method to set the value of coutner
-
-    // Now make sure we don't go under 0 or over 10
-  </script>
-</textarea>
-</article>
-
-
-
-
-
+ 
 <article class='slide slide-list'>
 <h2>Plugins: Barebones</h2>
 <p>Let's use the cycle plugin: <a href='http://jquery.malsup.com/cycle/'>http://jquery.malsup.com/cycle/</a> (images from <a href='http://lorempixel.com'>http://lorempixel.com</a>)</p>
-<textarea class='coder-editor' data-coder-template="coderdeck-style-nothing">
+<textarea class='coder-editor' data-coder-template="coderdeck-full-page">
 <html>
   <head>
     <!-- We include jquery -->
@@ -1141,7 +432,7 @@ $(document).ready(function() {
 
 <article class='slide slide-list'>
 <h2>Cycle: Style and Options</h2>
-<textarea class='coder-editor' data-coder-template="coderdeck-style-nothing">
+<textarea class='coder-editor' data-coder-template="coderdeck-full-page">
 <html>
   <head>
     <!-- We include jquery -->
@@ -1176,60 +467,542 @@ $(document).ready(function() {
 </article>
 
 
+<article class='slide slide-list'>
+<h2>Basic Navbar</h2>
+<textarea class='coder-editor coder-editor-full'>
+<style>
+
+#menu {  
+    list-style:none;  
+    width:940px;  
+    margin:30px auto 0px auto;  
+    height:43px;  
+    padding:0px 20px 0px 20px;  
+}
+
+#menu li {  
+    float:left;  
+    display:block;  
+    text-align:center;  
+    position:relative;  
+    padding: 4px 10px;  
+    margin-right:30px;  
+    margin-top:7px;  
+    border: 1px solid white;  
+}
+
+#menu li:hover {  
+    border: 1px solid gray;  
+    background: #F4F4F4;  
+
+}
+
+#menu li a {  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size:14px;  
+    color: gray;  
+    display:block;  
+    outline:0;  
+    text-decoration:none;  
+}
+
+#menu li ul {
+	display:none;
+	position:absolute;
+	top:20px;
+}
+
+</style>
+
+<ul id="menu">  
+    <li><a href="#">Home</a></li>  
+    <li><a href="#">About</a></li>  
+    <li><a href="#">Portfolio</a> 
+ 		<ul>
+		   <li><a href="#">Print</a></li>  
+		   <li><a href="#">Photography</a></li>  
+		   <li><a href="#">Web</a></li>
+		</ul></li>
+    <li><a href="#">Contact</a></li>  
+</ul>
+</textarea>
+</article>
+
+<article class='slide slide-subhead'>
+<h1>Rollover Navs</h1>
+<h2>pure CSS</h2>
+</article>
 
 <article class='slide slide-list'>
- <h2>Ajax</h2>
- <p><a href='http://api.jquery.com/jQuery.ajax/'>$.ajax</a>, $.get, $.post, $.getJSON </p>
-<textarea class='coder-editor'>
-<script>
-$(document).ready(function() {
-
-var ajax = $.get("names.json",function(data) {
-  alert(data);
-});
-
-});
-
-</script>
-
-</textarea>
+<h2>Drop-Down</h2>
+<p>Adding :hover selector</p>
+<textarea class='coder-editor coder-editor-full'>
+<style>
 
 
- </article>
+#menu {  
+    list-style:none;  
+    width:940px;  
+    margin:30px auto 0px auto;  
+    height:43px;  
+    padding:0px 20px 0px 20px;  
+}
 
- <article class='slide'>
- <h2>JSONp</h2>
- <p>Ajax is same-domain only. So there's a hack to pull data across domains called $.getScript </p>
- <textarea class='coder-editor'>
-<script>
-$(document).ready(function() {
- var username = 'aplusk';
- var count = 10;
- $.getJSON('http://twitter.com/statuses/user_timeline/' + username + '.json?callback=?',
-	  function(data) {
-		alert(data);
-		console.log(data);
-	  });
-});
-</script>
+#menu li {  
+    float:left;  
+    display:block;  
+    text-align:center;  
+    position:relative;  
+    padding: 4px 10px;  
+    margin-right:30px;  
+    margin-top:7px;  
+    border: 1px solid white;  
+}
+
+#menu li:hover {  
+    border: 1px solid gray;  
+    background: #F4F4F4;  
+
+}
+
+#menu li a {  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size:14px;  
+    color: gray;  
+    display:block;  
+    outline:0;  
+    text-decoration:none;  
+}
+
+#menu li ul {
+	display:none;
+	position:absolute;
+	top:20px;
+}
+
+#menu li:hover ul {
+	display:block;
+	
+}
+
+
+</style>
+
+<ul id="menu">  
+    <li><a href="#">Home</a></li>  
+    <li><a href="#">About</a></li>  
+    <li><a href="#">Portfolio</a> 
+ 		<ul>
+		   <li><a href="#">Print</a></li>  
+		   <li><a href="#">Photography</a></li>  
+		   <li><a href="#">Web</a></li>
+		</ul></li>
+    <li><a href="#">Contact</a></li>  
+</ul>
 
 </textarea>
 </article>
 
+<article class='slide slide-subhead'>
+<h1>Drop-Down Navs</h1>
+<h2>add a few line of javascript</h2>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>Click Drop-Down</h2>
+<textarea class='coder-editor coder-editor-full'>
+
+<div id='dropdowns'>
+<h3><a href="#">Section 1</a></h3>
+  <div>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+
+<h3><a href="#">Section 2</a></h3>
+  <div>
+   <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+
+<h3><a href="#">Section 3</a></h3>
+  <div>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+
+<h3><a href="#">Section 4</a></h3>
+  <div>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $(function() {
+      $("#dropdowns > div").hide();
+      $("#dropdowns h3").click(function() {
+        $("#dropdowns > div:visible").slideUp();
+        $(this).next().slideDown();
+       });
+   });
+</script>
+<style>
+
+  body { width:300px; marging: 0 auto; color:gray; font-family:Georgia, serif;}
+
+  p { padding-top:7px;}
+
+  h3 { 
+    margin-top:30px;
+    background-color:#dddddd;
+    padding:3px;
+    line-height:1.2em;
+}
+  h3 a { 
+    text-decoration:none;
+    color:gray;
+    font-weight:bold
+  }
+
+</style>
+
+
+</textarea>
+</article>
+
+<article class='slide slide-statement'>
+<h1><a href="http://docs.jquery.com/UI/Accordion">jQuery Accordian</a></h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>Click Drop-Down</h2>
+<p>jQuery Accordian</p>
+	
+<textarea class='coder-editor coder-editor-full'>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#accordion").accordion();
+	$( ".selector" ).accordion({ collapsible: true });
+  });
+  </script>
+</head>
+<body>
+	<div id="accordion">
+		<h3><a href="#">Section 1</a></h3>
+		  <div>
+		    <ul>
+		      <li>List item one</li>
+		      <li>List item two</li>
+		      <li>List item three</li>
+		    </ul>
+		  </div>
+
+		<h3><a href="#">Section 2</a></h3>
+		  <div>
+		  	<p>
+		  	Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+		  	purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+		  	velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+		  	suscipit faucibus urna.
+		  	</p>
+		  </div>
+
+		<h3><a href="#">Section 3</a></h3>
+		  <div>
+		    <ul>
+		      <li>List item one</li>
+		      <li>List item two</li>
+		      <li>List item three</li>
+		    </ul>
+		  </div>
+
+		<h3><a href="#">Section 4</a></h3>
+		  <div>
+		    <ul>
+		      <li>List item one</li>
+		      <li>List item two</li>
+		      <li>List item three</li>
+		    </ul>
+		  </div>
+	</div>
+
+	</body>
+	</html>
+	<style>
+
+	  body { width:300px; marging: 0 auto; color:gray; font-family:Georgia, serif;}
+
+	  p { padding-top:7px;}
+
+	  h3 { 
+	    margin-top:30px;
+	    background-color:#dddddd;
+	    padding:3px;
+	    line-height:1.2em;
+	}
+	  h3 a { 
+	    text-decoration:none;
+	    color:gray;
+	    font-weight:bold
+	  }
+
+	</style>
+</body>
+</head>
+</html>
+
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+<h2>Sticky Navbar</h2>
+<textarea class='coder-editor coder-editor-full' data-coder-template='coderdeck-plain'>
+<style>
+p { font-size:16px;
+	font-weight:normal;
+	padding-top:20px;
+	line-height:1.5em;
+	}
+
+#header-wrapper {
+
+	
+}
+
+header {
+
+}
+
+header h1 { 
+	float:left;
+	font-size:50px;
+	font-weight:bold;
+	color:teal;	
+}
+
+#menu {
+
+}
+
+#menu ul{  
+    list-style:none;  
+    width:940px;  
+    margin:30px auto 0px auto;  
+    height:43px;  
+    padding:0px 20px 0px 20px;  
+}
+
+
+#menu li {  
+    float:left;  
+    display:block;  
+    text-align:center;  
+    position:relative;  
+    padding: 4px 10px;  
+    margin-right:30px;  
+    margin-top:7px;  
+    border: 1px solid white;  
+}
+
+#menu li:hover {  
+    border: 1px solid gray;  
+    background: #F4F4F4;  
+
+}
+
+#menu li a {  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size:14px;  
+    color: gray;  
+    display:block;  
+    outline:0;  
+    text-decoration:none;  
+}
+
+#menu li ul {
+	display:none;
+	position:absolute;
+	top:20px;
+}
+
+#main-content {
+	clear:both;
+	width:400px;
+	}
+
+</style>
+<div id='header-wrapper'>
+<header>
+	<h1>MY PAGE</h1>
+	<nav id="menu">
+	  <ul>  
+	    <li><a href="#">Home</a></li>  
+	    <li><a href="#">About</a></li>  
+	    <li><a href="#">Portfolio</a></li>
+	    <li><a href="#">Contact</a></li>  
+	 </ul>
+	</nav>
+</header>
+</div>
+<section id="main-content">
+	<h1>Bacon Ipsum<h1>
+	<p>	Brisket chuck leberkas short ribs tenderloin tongue. Filet mignon sirloin jerky chicken strip steak t-bone. Ribeye short ribs fatback pancetta ham boudin, pork biltong tenderloin leberkas ball tip pork chop bresaola. Spare ribs kielbasa pork loin hamburger pork chop rump beef. Chuck spare ribs pork chop shank ribeye, leberkas turkey pig. Tri-tip tongue turducken, pig jowl brisket tail tenderloin flank rump bresaola pork chop short loin shoulder.</p>
+
+	<p>T-bone strip steak beef ribs, tenderloin drumstick pancetta biltong sirloin jowl speck kielbasa ball tip. Filet mignon leberkas jerky, cow shankle spare ribs fatback venison tri-tip short ribs kielbasa brisket. Swine pork loin beef kielbasa, prosciutto boudin beef ribs hamburger pork chop short ribs meatloaf frankfurter bresaola. Chuck kielbasa tail boudin.</p>	
+	
+	<p>Ball tip swine salami, strip steak boudin chicken fatback. Kielbasa bresaola ribeye swine speck pork belly. T-bone chuck turducken, tail pig ball tip kielbasa. Ribeye kielbasa tenderloin spare ribs, turducken beef ribs prosciutto drumstick brisket pastrami strip steak. Jerky salami biltong chicken, ground round pig pork chop meatball pork corned beef pastrami turducken shoulder.</p>
+
+		<p>Ball tip capicola chuck kielbasa prosciutto chicken. Meatloaf meatball corned beef pork belly, andouille frankfurter salami ground round biltong rump spare ribs. Capicola tail boudin, turducken pork belly ribeye bresaola bacon t-bone ball tip. Ribeye frankfurter spare ribs, ground round pork loin tail rump salami speck sirloin pastrami shank.</p>
+
+		<p>Ham hamburger capicola short loin pork loin kielbasa. Meatball biltong tri-tip pork belly speck pork loin, shankle bacon. Bacon frankfurter prosciutto, ribeye tri-tip jowl beef pork chop kielbasa bresaola t-bone pig shank short loin. Jerky brisket pork chop jowl.</p>
+</section>	
+
+</textarea>
+<script type='coder-solution'>
+<style>
+
+	
+#header-wrapper {
+	height:80px;
+	
+}
+
+header {
+	position:fixed;
+    background-color:white;
+}
+
+header h1 { 
+	float:left;
+	font-size:50px;
+	font-weight:bold;
+	color:teal;	
+}
+
+#menu {
+
+}
+
+#menu ul{  
+    list-style:none;  
+    width:940px;  
+    margin:30px auto 0px auto;  
+    height:43px;  
+    padding:0px 20px 0px 20px;  
+}
+
+
+#menu li {  
+    float:left;  
+    display:block;  
+    text-align:center;  
+    position:relative;  
+    padding: 4px 10px;  
+    margin-right:30px;  
+    margin-top:7px;  
+    border: 1px solid white;  
+}
+
+#menu li:hover {  
+    border: 1px solid gray;  
+    background: #F4F4F4;  
+
+}
+
+#menu li a {  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size:14px;  
+    color: gray;  
+    display:block;  
+    outline:0;  
+    text-decoration:none;  
+}
+
+#menu li ul {
+	display:none;
+	position:absolute;
+	top:20px;
+}
+
+#main-content {
+	clear:both;
+	width:400px;
+	}
+
+#main-content p { font-size:16px;
+	font-weight:normal;
+	padding-top:20px;
+	line-height:1.5em;
+	}
+	
+#main-content h1 {
+	color:teal;
+	padding-top:100px;
+	font-size:30px;
+}
+
+
+</style>
+<div id='header-wrapper'>
+<header>
+	<h1>MY PAGE</h1>
+	<nav id="menu">
+	  <ul>  
+	    <li><a href="#home">Home</a></li>  
+	    <li><a href="#about">About</a></li>  
+	    <li><a href="#portfolio">Portfolio</a></li>
+	    <li><a href="#contact">Contact</a></li>  
+	 </ul>
+	</nav>
+</header>
+</div>
+<section id="main-content">
+	<h1 id="home">Bacon Ipsum</h1>
+	<p>	Brisket chuck leberkas short ribs tenderloin tongue. Filet mignon sirloin jerky chicken strip steak t-bone. Ribeye short ribs fatback pancetta ham boudin, pork biltong tenderloin leberkas ball tip pork chop bresaola. Spare ribs kielbasa pork loin hamburger pork chop rump beef. Chuck spare ribs pork chop shank ribeye, leberkas turkey pig. Tri-tip tongue turducken, pig jowl brisket tail tenderloin flank rump bresaola pork chop short loin shoulder.</p>
+	<h1 id="about">About</h1>
+	<p>T-bone strip steak beef ribs, tenderloin drumstick pancetta biltong sirloin jowl speck kielbasa ball tip. Filet mignon leberkas jerky, cow shankle spare ribs fatback venison tri-tip short ribs kielbasa brisket. Swine pork loin beef kielbasa, prosciutto boudin beef ribs hamburger pork chop short ribs meatloaf frankfurter bresaola. Chuck kielbasa tail boudin.</p>	
+	<h1 id="portfolio">Portfolio</h1>	
+	<p>Ball tip swine salami, strip steak boudin chicken fatback. Kielbasa bresaola ribeye swine speck pork belly. T-bone chuck turducken, tail pig ball tip kielbasa. Ribeye kielbasa tenderloin spare ribs, turducken beef ribs prosciutto drumstick brisket pastrami strip steak. Jerky salami biltong chicken, ground round pig pork chop meatball pork corned beef pastrami turducken shoulder.</p>
+
+		<p>Ball tip capicola chuck kielbasa prosciutto chicken. Meatloaf meatball corned beef pork belly, andouille frankfurter salami ground round biltong rump spare ribs. Capicola tail boudin, turducken pork belly ribeye bresaola bacon t-bone ball tip. Ribeye frankfurter spare ribs, ground round pork loin tail rump salami speck sirloin pastrami shank.</p>
+	<h1 id="contact">Contact</h1>
+		<p>Ham hamburger capicola short loin pork loin kielbasa. Meatball biltong tri-tip pork belly speck pork loin, shankle bacon. Bacon frankfurter prosciutto, ribeye tri-tip jowl beef pork chop kielbasa bresaola t-bone pig shank short loin. Jerky brisket pork chop jowl.</p>
+</section>	
+</script>
+
+</article>
 
 <article class='slide slide-homework'>
 <h2>Homework</h2>
 	<h3 class='slide'>Coding</h3>
        <ul class='slide'>
-			<li>
-                          <h3>Through both the beginner and intermediate courses on codecademy</h3>
-                          <h3><a href='http://www.codecademy.com/courses/programming-intro'>Beginning Programming</a> / 
-                            <a href='http://www.codecademy.com/courses/jquery-and-the-dom'>jQuery and the DOM</a> /
-                            <a href='http://www.codecademy.com/courses/functions_in_javascript'>Functions in Javascript</a>
-                          </h3>
-			</li>
+			<li><h3>Through both the beginner and intermediate courses on codecademy</h3>
+                          
+			<li><h3><a href='http://www.codecademy.com/courses/programming-intro'>Beginning Programming</a></h3></li> 
+            <li><h3><a href='http://www.codecademy.com/courses/jquery-and-the-dom'>jQuery and the DOM</a> </h3></li>
+            <li><h3><a href='http://www.codecademy.com/courses/functions_in_javascript'>Functions in Javascript</a></h3></li>
 		</ul>
-</ul>	
+
 	
 	
 </article>
