@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Design 1 - Class 10</title>
+	<meta name="viewport" content="width=1024">
+	
+	
+    <link rel="stylesheet" href="dist/coderdeck-core.min.css" type="text/css">
+	<link rel="stylesheet" id='style-theme-link' href="css/coderdeck.css" type="text/css" >
+
+	<script src='dist/jquery.min.js'></script>
+	<script src="dist/modernizr.js"></script>
+
+	<script type="text/javascript" src="http://use.typekit.com/idq2tqo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='dist/jquery.min.js'>SCRIPTEND
+	    </head>
+	    <body>
+		    CODE
+	    </body>
+	</html>
+	</script>
+
+	<script type='text/coderdeck' id='coderdeck-css-playground'>
+		<html>
+			<title>test</title>
+				CODE
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt;</p>
+				<div class='stuff'>&lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>&lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script>
+
+
+	<script type='text/coderdeck' id='coderdeck-plain'>
+		<html>
+			<title>test</title>
+			<link rel="stylesheet" href="reset.css">
+			<body>
+				CODE
+			</body>
+		</html>
+	</script>
+
+
+
+	<script type='text/coderdeck' id='coderdeck-style-example'>
+		<html>
+			<title>test</title>
+			<style>
+				CODE
+			</style>
+			<body>
+				<h1>I'm a H1 heading</h1>
+				<h2>I'm a H2 heading</h2>
+				<p>Paragraph of text &lt;p&gt; here</p>
+				<div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+				<div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+			</body>
+		</html>
+	</script> 	
+
+	<script type='text/coderdeck' id='coderdeck-full-page'>
+	CODE
+	</script>
+	
+	
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<article class='slide slide-subhead'>
+<h1>Extras</h1>
+<h2>Week 10</h2>
+<p>CDGD304 - Spring 2012<br/>
+ <a href='http://bit.ly/deck-web304-s12/10'>http://bit.ly/deck-web304-s12/10</a></p>
+</article>
+	
+<article class='slide slide-list'>
+<h1>Order of Business</h1>
+	<ol>
+		<li class="slide">
+			<h3>Final Project Design Critiques</h3>
+		</li>
+		<li class="slide">
+			<h3>Images - what you can't and can't put on the web</h3>
+		</li>
+		<li class="slide">
+			<h3>Hosting and Uploading your own site</h3>
+		</li>
+		<li class="slide">
+			<h3>Basic Contact Form</h3>
+		</li>
+		<li class="slide">
+			<h3>Pulling a Twitter Feed</h3>
+		</li>
+	</ol>
+</article>
+
+
+<article class="slide slide-list">
+	<h2>Final Project Review</h2>
+	<script>
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+
+function shuffleHomework(amt) {
+	if(amt <= 0) return;
+	$("#homework li").shuffle();
+	setTimeout(function() { shuffleHomework(amt - 1); },200);
+}
+
+	</script>
+	<a href='javascript:shuffleHomework(10);'>Shuffle</a>
+	<ul id='homework'>
+		<li><a href='http://lcamoroso.github.com/homework/index.html'>lcamoroso </a></li>
+		<li><a href='http://HilaryBraun.github.com/homework/index.html'>HilaryBraun</a></li>
+		<li><a href='http://adelenadent.github.com/homework/index.html'>adelenadent</a></li>
+		<li><a href='http://MadsG.github.com/homework/index.html'>MadsG</a></li>
+		<li><a href='http://erherskovitz.github.com/homework/index.html'>erherskovitz</a></li>
+		<li><a href='http://JuliDanielle.github.com/homework/index.html'>JuliDanielle</a></li>
+		<li><a href='http://ssuejkim.github.com/homework/index.html'>ssuejkim</a></li>
+		<li><a href='http://elknapp.github.com/homework/index.html'>elknapp</a></li>
+		<li><a href='http://linakong.github.com/homework/index.html'>linakong</a></li>
+		<li><a href='http://erikaleahey.github.com/homework/index.html'>erikaleahey</a></li>
+		<li><a href='http://zrmccarthy.github.com/homework/index.html'>zrmccarthy</a></li>
+		<li><a href='http://crpressman.github.com/homework/index.html'>crpressman</a></li>
+		<li><a href='http://MikeTavilla.github.com/homework/index.html'>MikeTavilla</a></li>
+	</ul>
+</article>
+
+
+
+
+
+<article class='slide slide-subhead'>
+	<h1>Images on the Web</h1>
+</article>
+
+<article class='slide slide-list'>
+<h1>Know the Basics</h1>
+	<ul>
+		<li class="slide">
+			<h3>8bit vs 24bit</h3>
+		</li>
+		<li class="slide">
+			<h3>Compresed vs Uncompressed</h3>
+		</li>
+		<li class="slide">
+			<h3>Lossy vs Non-lossy</h3>
+		</li>
+		<li class="slide">
+			<h3>Transparency</h3>
+		</li>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+<h1>Know your Formats</h1>
+	<ul>
+		<li class="slide">
+			<h3>GIF</h3>
+		</li>
+		<li class="slide">
+			<h3>JPG</h3>
+		</li>
+		<li class="slide">
+			<h3>PNG</h3>
+		</li>
+		<li class="slide">
+			<h3>SVG</h3>
+		</li>
+   		<li class="slide">
+   			<h3>ICO </h3>
+   		</li>
+	</ul>
+</article>
+
+<article class="slide slide-statement">
+	<h1><s>.tiff</s></h1>
+</article>
+
+<article class="slide slide-statement">
+	<h1><s>.psd</s></h1>
+</article>
+
+<article class="slide slide-statement">
+	<h1><s>.eps</s></h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>gif</h2>
+	<ul>
+		<li class="slide">
+			<h3>non-lossy</h3>
+		</li>
+		<li class="slide">
+			<h3>8bit</h3>
+		</li>
+		<li class="slide">
+			<h3>1bit transparency</h3>
+		</li>
+		<li class="slide">
+			<h3>small</h3>
+		</li>
+   		<li class="slide">
+   			<h3>RLE </h3>
+   		</li>
+		<li class="slide">
+   			<h3>Can be <a href="http://dailydoseofcute.net/wp-content/uploads/bulldog-in-a-swing.gif">animated</a></h3>
+   		</li>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>jpg</h2>
+	<ul>
+		<li class="slide">
+			<h3>lossy</h3>
+		</li>
+		<li class="slide">
+			<h3>FFT-compression</h3>
+		</li>
+		<li class="slide">
+			<h3>24 bit</h3>
+		</li>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>png</h2>
+	<ul>
+		<li class="slide">
+			<h3>upgrading gif</h3>
+		</li>
+		<li class="slide">
+			<h3>24 & 8bit</h3>
+		</li>
+		<li class="slide">
+			<h3>24 bit supports "soft" transparency</h3>
+		</li>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>svg</h2>
+	<ul>
+		<li class="slide">
+			<h3>scalable vector graphics</h3>
+		</li>
+		<li class="slide">
+			<h3>good support only recently</h3>
+	</ul>
+</article>
+
+<article class='slide slide-list'>
+<h2>ico</h2>
+	<ul>
+		<li class="slide">
+			<h3>favicon (the only time you would use it)</h3>
+		</li>
+	</ul>
+</article>
+
+<article class='slide slide-subhead'>
+	<h2>Which Format?</h2>
+</article>
+
+<article class="slide slide-image">
+	<img src='images/mr-burns.gif'/>
+</article>
+	
+<article class="slide slide-image">
+	<img src='images/fatcat.jpg'/>
+</article>
+
+<article class="slide slide-image">
+	<img src='images/big-logo.png'/>
+</article>
+
+
+	
+	
+<article class='slide slide-subhead'>
+	<h1>Hosting &amp; FTPing your website</h1>
+	<h2>quick and cheap</h2>
+</article>
+
+<article class='slide slide-statement'>
+	<h1><a href='http://dreamhost.com/'>DreamHost</a><h1>
+</article>	
+
+<article class='slide slide-statement'>
+<h1><a href='http://fetchsoftworks.com/'>Fetch FTP</a><h1>
+</article>
+
+
+
+
+<article class='slide slide-subhead'>
+<h1>Twitter Feeds</h1>
+<h2>pull a twitter feed</h2>
+</article>
+
+
+<article class='slide slide-statement'>
+	<h1><a href="http://twitter.com/about/resources/widgets">Pulling Your Twitter Feed</a></h1>
+</article>
+
+<article class='slide slide-list'>
+<h2>Twitter Feed</h2>
+<p>paste your code here</p>
+<textarea class='coder-editor coder-editor-full' >
+
+
+
+
+
+
+
+
+</textarea>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Forms</h1>
+<h2>a basic contact form</h2>
+</article>
+
+
+<article class='slide slide-list'>
+<h2>HTML5 Form</h2>
+<textarea class='coder-editor coder-editor-full' >
+ <div id="contact-form">    
+
+<form id="contact" method="post" action="somewhere.php">
+<fieldset>    
+
+	<label for="name">Name</label>
+	<input type="text" name="contact[name]" placeholder="Full Name">
+
+	<label for="email">E-mail</label>
+	<input type="email" name="contact[email]" placeholder="name@domain.com">
+
+	<label for="phone">Message</label>
+	<textarea name="contact[message]" placeholder="enter your message">&lt/textarea>
+
+
+<input type="submit" name="submit" id="submit" value="Send Message" />
+
+</fieldset>
+</form>
+
+</div>
+<style>
+label {display:block;}
+input, textarea { display:block;}
+</style>
+</textarea>
+</article>
+
+<article class='slide slide-list'>
+  <h2>What does somewhere.php do?</h2>
+  <p>Well, we haven't covered PHP, but here's a example..</p>
+<pre class='prettyprint'>
+&lt;?php
+if($_REQUEST['contact']) {
+
+  $content = "Contact Details:\n";
+  foreach($_REQUEST['contact'] as $key => $value) {
+     $content .= "$key: $value\n";
+  }
+  mail ("myemail@domain.com","Form Submission!",$content);
+  
+  header('Location: contact.html');
+  exit(0);
+}
+?>
+&lt;!DOCTYPE HTML>
+&lt;html lang="en">
+  &lt;head>&lt;/head>
+  &lt;body>
+    No Contact Request Received
+  &lt;/body>
+&lt;/html>
+</pre>
+</article>
+
+<article class='slide slide-subhead'>
+<h1><a href="http://tympanus.net/Development/3DGallery/">3D Gallery with CSS &amp; jQuery</a></h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1><a href="http://tympanus.net/Development/ParallaxContentSlider/index3.html">Parallax Slider</a></h2>
+</article>
+
+<article class='slide slide-subhead'>
+<h1><a href="http://css-tricks.com/snippets/jquery/smooth-scrolling/">Smooth Schrolling</a></h2>
+</article>
+
+
+<article class='slide slide-subhead'>
+<h1>Useful Tricks
+<h3>
+	<ul>
+		<li><a href="http://css-tricks.com/keep-margins-out-of-link-lists/">Keep Margins out of Link Lists</a></li>
+		<li><a href="http://css-tricks.com/perfect-full-page-background-image/">Perfect Full Page Background Image</a></li>
+		<li><a href="http://css-tricks.com/snippets/css/slide-in-image-boxes/">Slide In Image Boxes</a></li>
+		<li><a href="http://tympanus.net/Development/ParallaxContentSlider/index3.html">Styling Text Inputs</a></li>
+		<li><a href="http://sublimeorange.com/uncategorized/css3-speech-bubble/l">CSS3 Speech Bubble</a></li>
+		<li><a href="http://css-tricks.com/snippets/jquery/make-entire-div-clickable/">Make Entire Div Clickable</a></li>
+		<li><a href="http://css-tricks.com/snippets/css/sticky-footer/">Sticky Footer #2</a></li>
+	</ul>	
+</article>
+
+
+
+
+
+
+<article class='slide slide-homework'>
+<h2>Homework</h2>
+	
+	<h3 class='slide'>Design</h3>
+       <ul class='slide'>
+			<li>
+                <h3>Keep working on your final project!! - seniors only have 1 class left before the final presentation!<br/>Email me with problems and I will include them in the next class
+ 			    </h3>
+			</li>
+			<li>
+	           <h3>Add a form and a Twitter feed to your website.
+	 		   </h3>
+			</li>
+		</ul>
+</ul>	
+</article>
+
+
+
+<script src='dist/coderdeck.js'></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
